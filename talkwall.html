@@ -1,0 +1,719 @@
+ <!DOCTYPE html>
+ <html>
+   <head>
+
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+     
+
+     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css" type="text/css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-light.min.css" rel="stylesheet" />
+
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+     <script>hljs.initHighlightingOnLoad();</script>
+
+     
+
+     <style>
+       
+
+body 
+{
+  font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
+}
+
+figcaption
+{
+  margin-bottom: 20px;
+}
+
+.vertical-align
+{
+  display: flex;
+  align-items: center;
+}
+
+.ui.segment.pushable
+{
+  margin: 0;
+  padding: 1rem 0;
+  overflow: visible;
+}
+
+
+
+     </style>
+
+   </head>
+
+  <body>
+    
+
+
+  <header class="ui center aligned middle aligned stackable grid segment">
+
+    
+      
+  <a class="ui blue left corner label">
+    <div id="showTOC" class="popup" data-content="Reveal TOC">
+      <i id="toc" class="sitemap big  icon"></i>
+    </div>
+  </a>
+
+    
+
+    <div class="ui five wide column">
+      <h2> Building Modern Web Applications & Services </h2>
+    </div>
+
+    <div class="ui two wide column">
+      
+          
+  <div class="two wide column sitemap">
+    <div class="popup" data-content="To the top level Topics for this Module...">
+      <a href="index.html"> <i class="huge home icon"></i> <br> Module Home </a>
+    </div>
+  </div>
+
+        
+    </div>
+
+    <div class="ui five wide column">
+      
+  <div class="four wide column">
+    <div class="ui center aligned mini message segment">
+      Prepared for <a href="https://www.oth-regensburg.de/"> OTH Regensburg </a> by <a href="https://www.wit.ie/about_wit/contact_us/staff_directory/eamonn_deleastar"> Eamonn de Leastar<a>, <a href="https://www.wit.ie"> WIT</a>.
+      <a href="http://creativecommons.org/licenses/by-nc/4.0/"
+         title="External link to http://creativecommons.org/licenses/by-nc/4.0/"
+         target="_blank">Creative Commons License
+      </a>
+    </div>
+  </div>
+
+    </div>
+
+    <div class="three wide column">
+      
+        
+  <div class="ui equal width center aligned grid segment">
+    
+      
+        <div class="column">
+          <div class="popup" data-content="All talk's in Course">
+            <a href="talkwall.html"> <i class="big object group icon"></i> </a>
+            <div class="ui blue mini circular label">
+              17
+            </div>
+          </div>
+        </div>
+      
+    
+      
+        <div class="column">
+          <div class="popup" data-content="All lab's in Course">
+            <a href="labwall.html"> <i class="big lab icon"></i> </a>
+            <div class="ui blue mini circular label">
+              9
+            </div>
+          </div>
+        </div>
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+
+      
+    </div>
+
+
+  </header>
+  
+  
+    <script>
+      ((window.gitter = {}).chat = {}).options = {
+        room: 'wit-oth-2017-dmas/Lobby'
+      };
+    </script>
+    <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+  
+
+
+
+  <div class="ui bottom attached segment pushable">
+    <div class="ui inverted labeled icon left inline vertical sidebar menu">
+      
+    </div>
+    <div class="pusher">
+      <div class="ui container">
+        <div class="ui basic segment">
+          <div class="ui centered four doubling stackable cards">
+            
+              
+                
+
+  
+     <a class="ui raised link card" href="topic-00-intro/talk-0-overview/overview.pdf" target="_blank">
+  
+
+      <div class="center aligned content">
+        <div class="right floated meta"><i class="huge object group icon"></i></div>
+        <div class="header">  Course Overview</div>
+      </div>
+
+      <div class="image">
+        <img class="ui bordered rounded image" src="topic-00-intro/talk-0-overview/overview.png">
+      </div>
+
+      <div class="center aligned content">
+        <div class="description">
+          <p>A brief overview of the entire course</p>
+
+        </div>
+      </div>
+
+      
+
+    </a>
+
+
+              
+            
+              
+                
+
+  
+     <a class="ui raised link card" href="topic-00-intro/talk-1-assessment/assignment-1.pdf" target="_blank">
+  
+
+      <div class="center aligned content">
+        <div class="right floated meta"><i class="huge object group icon"></i></div>
+        <div class="header">  Assignment 1</div>
+      </div>
+
+      <div class="image">
+        <img class="ui bordered rounded image" src="topic-00-intro/talk-1-assessment/assignment-1.jpg">
+      </div>
+
+      <div class="center aligned content">
+        <div class="description">
+          <p>The specification for Assignment 1</p>
+
+        </div>
+      </div>
+
+      
+
+    </a>
+
+
+              
+            
+              
+                
+
+  
+     <a class="ui raised link card" href="topic-01-html&css/topic-01-html-and-templating/talk-0-course-structure/summer-school.pdf" target="_blank">
+  
+
+      <div class="center aligned content">
+        <div class="right floated meta"><i class="huge object group icon"></i></div>
+        <div class="header"> Summer School Schedule</div>
+      </div>
+
+      <div class="image">
+        <img class="ui bordered rounded image" src="topic-01-html&css/topic-01-html-and-templating/talk-0-course-structure/summer-school.png">
+      </div>
+
+      <div class="center aligned content">
+        <div class="description">
+          <p>Schedule and structure of the Summer School</p>
+
+        </div>
+      </div>
+
+      
+
+    </a>
+
+
+              
+            
+              
+                
+
+  
+     <a class="ui raised link card" href="topic-01-html&css/topic-01-html-and-templating/talk-1-deployment/deployment.pdf" target="_blank">
+  
+
+      <div class="center aligned content">
+        <div class="right floated meta"><i class="huge object group icon"></i></div>
+        <div class="header"> Deployment</div>
+      </div>
+
+      <div class="image">
+        <img class="ui bordered rounded image" src="topic-01-html&css/topic-01-html-and-templating/talk-1-deployment/deployment.png">
+      </div>
+
+      <div class="center aligned content">
+        <div class="description">
+          <p>Deploying a site involves understanding a little more about Clients &amp; Servers, Hosting Providers, Domain Names, Transferring the Sites Files, HTTP and Absolute &amp; Relative Paths</p>
+
+        </div>
+      </div>
+
+      
+
+    </a>
+
+
+              
+            
+              
+                
+
+  
+     <a class="ui raised link card" href="topic-01-html&css/topic-01-html-and-templating/talk-2-harp-and-surge/harp.pdf" target="_blank">
+  
+
+      <div class="center aligned content">
+        <div class="right floated meta"><i class="huge object group icon"></i></div>
+        <div class="header"> Harp & Surge</div>
+      </div>
+
+      <div class="image">
+        <img class="ui bordered rounded image" src="topic-01-html&css/topic-01-html-and-templating/talk-2-harp-and-surge/harp.png">
+      </div>
+
+      <div class="center aligned content">
+        <div class="description">
+          <p>Harp.js and Surge.sh are the two services we will use to server the page locally, and also to deploy it to a public web server.</p>
+
+        </div>
+      </div>
+
+      
+
+    </a>
+
+
+              
+            
+              
+                
+
+  
+     <a class="ui raised link card" href="topic-01-html&css/topic-01-html-and-templating/talk-3-html/case-study.pdf" target="_blank">
+  
+
+      <div class="center aligned content">
+        <div class="right floated meta"><i class="huge object group icon"></i></div>
+        <div class="header"> Case Study</div>
+      </div>
+
+      <div class="image">
+        <img class="ui bordered rounded image" src="topic-01-html&css/topic-01-html-and-templating/talk-3-html/case-study.png">
+      </div>
+
+      <div class="center aligned content">
+        <div class="description">
+          <p>A review of the the evolution of a web site from simple unstyled pages to a reasonable simple but appealing layout.</p>
+
+        </div>
+      </div>
+
+      
+
+    </a>
+
+
+              
+            
+              
+                
+
+  
+     <a class="ui raised link card" href="topic-01-html&css/topic-01-html-and-templating/talk-4-templates/templates.pdf" target="_blank">
+  
+
+      <div class="center aligned content">
+        <div class="right floated meta"><i class="huge object group icon"></i></div>
+        <div class="header"> Templates</div>
+      </div>
+
+      <div class="image">
+        <img class="ui bordered rounded image" src="topic-01-html&css/topic-01-html-and-templating/talk-4-templates/templates.png">
+      </div>
+
+      <div class="center aligned content">
+        <div class="description">
+          <p>The EJS template system implements mechanisms for assembling sites from templates - which are called &#39;partials&#39; in EJS. Additionally, there is a complimentary &#39;layout&#39; mechanism for reusing entire page structures.</p>
+
+        </div>
+      </div>
+
+      
+
+    </a>
+
+
+              
+            
+              
+                
+
+  
+     <a class="ui raised link card" href="topic-01-html&css/topic-02-css-frameworks/talk-2/sematic-ui-part-1.pdf" target="_blank">
+  
+
+      <div class="center aligned content">
+        <div class="right floated meta"><i class="huge object group icon"></i></div>
+        <div class="header"> Semantic-UI I</div>
+      </div>
+
+      <div class="image">
+        <img class="ui bordered rounded image" src="topic-01-html&css/topic-02-css-frameworks/talk-2/sematic-ui-part-1.png">
+      </div>
+
+      <div class="center aligned content">
+        <div class="description">
+          <p>An overview of the container and segments styles in the framework</p>
+
+        </div>
+      </div>
+
+      
+
+    </a>
+
+
+              
+            
+              
+                
+
+  
+     <a class="ui raised link card" href="topic-01-html&css/topic-02-css-frameworks/talk-3/sematic-ui-part-2.pdf" target="_blank">
+  
+
+      <div class="center aligned content">
+        <div class="right floated meta"><i class="huge object group icon"></i></div>
+        <div class="header"> Semantic-UI II</div>
+      </div>
+
+      <div class="image">
+        <img class="ui bordered rounded image" src="topic-01-html&css/topic-02-css-frameworks/talk-3/sematic-ui-part-2.png">
+      </div>
+
+      <div class="center aligned content">
+        <div class="description">
+          <p>An exploration of the Grid and Image styles.</p>
+
+        </div>
+      </div>
+
+      
+
+    </a>
+
+
+              
+            
+              
+                
+
+  
+     <a class="ui raised link card" href="topic-01-html&css/topic-02-css-frameworks/talk-4/sematic-ui-part-3.pdf" target="_blank">
+  
+
+      <div class="center aligned content">
+        <div class="right floated meta"><i class="huge object group icon"></i></div>
+        <div class="header"> Semantic-UI III</div>
+      </div>
+
+      <div class="image">
+        <img class="ui bordered rounded image" src="topic-01-html&css/topic-02-css-frameworks/talk-4/sematic-ui-part-3.png">
+      </div>
+
+      <div class="center aligned content">
+        <div class="description">
+          <p>An exploration of the Tables</p>
+
+        </div>
+      </div>
+
+      
+
+    </a>
+
+
+              
+            
+              
+                
+
+  
+     <a class="ui raised link card" href="topic-01-html&css/topic-02-css-frameworks/talk-5/semantic-4.pdf" target="_blank">
+  
+
+      <div class="center aligned content">
+        <div class="right floated meta"><i class="huge object group icon"></i></div>
+        <div class="header"> Semantic Part IV</div>
+      </div>
+
+      <div class="image">
+        <img class="ui bordered rounded image" src="topic-01-html&css/topic-02-css-frameworks/talk-5/semantic-4.png">
+      </div>
+
+      <div class="center aligned content">
+        <div class="description">
+          <p>Our final tour of the Semantic-UI library - with a focus on icons, variations in segments and responsive grids</p>
+
+        </div>
+      </div>
+
+      
+
+    </a>
+
+
+              
+            
+              
+                
+
+  
+     <a class="ui raised link card" href="topic-02-js-review/talk-1-js-intro/js-intro.pdf" target="_blank">
+  
+
+      <div class="center aligned content">
+        <div class="right floated meta"><i class="huge object group icon"></i></div>
+        <div class="header"> JS Introduction</div>
+      </div>
+
+      <div class="image">
+        <img class="ui bordered rounded image" src="topic-02-js-review/talk-1-js-intro/js-intro.png">
+      </div>
+
+      <div class="center aligned content">
+        <div class="description">
+          <p><strong>JavaScript</strong>, an introduction to the language of the web.</p>
+
+        </div>
+      </div>
+
+      
+
+    </a>
+
+
+              
+            
+              
+                
+
+  
+     <a class="ui raised link card" href="topic-02-js-review/talk-2-js-basics/js-basics.pdf" target="_blank">
+  
+
+      <div class="center aligned content">
+        <div class="right floated meta"><i class="huge object group icon"></i></div>
+        <div class="header"> JS Basics</div>
+      </div>
+
+      <div class="image">
+        <img class="ui bordered rounded image" src="topic-02-js-review/talk-2-js-basics/js-basics.png">
+      </div>
+
+      <div class="center aligned content">
+        <div class="description">
+          <p>Continuing introduction to the language including the topics of identifiers, operators and contol flow techniques.</p>
+
+        </div>
+      </div>
+
+      
+
+    </a>
+
+
+              
+            
+              
+                
+
+  
+     <a class="ui raised link card" href="topic-02-js-review/talk-3-arrays-objs-functions/arrays-objs-functions.pdf" target="_blank">
+  
+
+      <div class="center aligned content">
+        <div class="right floated meta"><i class="huge object group icon"></i></div>
+        <div class="header">  Arrays, Objects & Functions</div>
+      </div>
+
+      <div class="image">
+        <img class="ui bordered rounded image" src="topic-02-js-review/talk-3-arrays-objs-functions/arrays-objs-functions.png">
+      </div>
+
+      <div class="center aligned content">
+        <div class="description">
+          
+        </div>
+      </div>
+
+      
+
+    </a>
+
+
+              
+            
+              
+                
+
+  
+     <a class="ui raised link card" href="topic-03-jquery+dom/talk-4-js-browser/js-browser.pdf" target="_blank">
+  
+
+      <div class="center aligned content">
+        <div class="right floated meta"><i class="huge object group icon"></i></div>
+        <div class="header"> JS Browser Tools</div>
+      </div>
+
+      <div class="image">
+        <img class="ui bordered rounded image" src="topic-03-jquery+dom/talk-4-js-browser/js-browser.png">
+      </div>
+
+      <div class="center aligned content">
+        <div class="description">
+          <p>Simple JavaScript client-side applications. Introducing Chrome Developer tools.</p>
+
+        </div>
+      </div>
+
+      
+
+    </a>
+
+
+              
+            
+              
+                
+
+  
+     <a class="ui raised link card" href="topic-03-jquery+dom/talk-5-dom/dom.pdf" target="_blank">
+  
+
+      <div class="center aligned content">
+        <div class="right floated meta"><i class="huge object group icon"></i></div>
+        <div class="header"> DOM</div>
+      </div>
+
+      <div class="image">
+        <img class="ui bordered rounded image" src="topic-03-jquery+dom/talk-5-dom/dom.png">
+      </div>
+
+      <div class="center aligned content">
+        <div class="description">
+          <p>The DOM: Javascript manipulates the contents of the web page through a standard abstraction called the Document Object Model (DOM), hence the reason for this brief introduction.</p>
+
+        </div>
+      </div>
+
+      
+
+    </a>
+
+
+              
+            
+              
+                
+
+  
+     <a class="ui raised link card" href="topic-03-jquery+dom/talk-6-jquery/jquery.pdf" target="_blank">
+  
+
+      <div class="center aligned content">
+        <div class="right floated meta"><i class="huge object group icon"></i></div>
+        <div class="header"> JQuery</div>
+      </div>
+
+      <div class="image">
+        <img class="ui bordered rounded image" src="topic-03-jquery+dom/talk-6-jquery/jquery.png">
+      </div>
+
+      <div class="center aligned content">
+        <div class="description">
+          <p>jQuery: although not as popular as it once may have been, rumours of its death have likely been greatly exaggerated. Undoubtedly losing ground to modern frameworks. it will still probably be in widespread use for quite some time yet.</p>
+
+        </div>
+      </div>
+
+      
+
+    </a>
+
+
+              
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+    <footer>
+
+    </footer>
+    <script>
+      $(document).ready(function() {
+  $('img').addClass('ui image');
+
+  $('.ui.embed').embed();
+
+  const $images = $('.lab img');
+  jQuery.each($images, function(i) {
+    if ($images[i].alt.length > 0) {
+      const divImg = $(document.createElement('div')).addClass(
+        'ui basic segment',
+      );
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass(
+        'ui blue ribbon label',
+      );
+      divLabel.append($images[i].alt);
+      $(divLabel).insertBefore($images[i]);
+    }
+  });
+
+  $('.ui.menu .item').tab({
+    history: true,
+    historyType: 'hash',
+  });
+
+  $('.popup').popup();
+
+  $('.ui.sidebar')
+    .sidebar({ context: $('.pushable') })
+    .sidebar('setting', 'transition', 'slide out')
+    .sidebar('attach events', '#toc');
+});
+
+    </script>
+  </body>
+
+ </html>
