@@ -1,0 +1,485 @@
+ <!DOCTYPE html>
+ <html>
+   <head>
+
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+     
+
+     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css" type="text/css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-light.min.css" rel="stylesheet" />
+
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+     <script>hljs.initHighlightingOnLoad();</script>
+
+     
+
+     <style>
+       
+
+body 
+{
+  font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
+}
+
+figcaption
+{
+  margin-bottom: 20px;
+}
+
+.vertical-align
+{
+  display: flex;
+  align-items: center;
+}
+
+.ui.segment.pushable
+{
+  margin: 0;
+  padding: 1rem 0;
+  overflow: visible;
+}
+
+
+
+     </style>
+
+   </head>
+
+  <body>
+    
+
+<style>
+  
+
+code
+{
+  font-family: "Monaco";
+  font-size: 110%;
+}
+
+img
+{
+  padding:1px;
+  border:1px solid black;
+}
+
+h1
+{
+  font-style:italic;
+  font-size:130%;
+  border-bottom:thin solid black;
+}
+
+h2
+{
+  font-size:110%;
+  border-bottom: thin solid black;
+}
+
+h3
+{
+  font-size:100%;
+  border-bottom: thin solid black;
+}
+
+body
+{
+  overflow-y: scroll;
+}
+
+.pushable > .pusher
+{
+  padding-bottom: 1.5rem;
+}
+
+.ui.segment.pushable
+{
+  margin: 0;
+  padding: 1rem 0;
+  overflow: visible;
+}
+
+
+
+</style>
+
+<div class="ui fixed top pointing inverted stackable menu labmenu">
+  <header class="header item">
+    <i id="toc" class="sitemap icon"></i>
+    <a href="../index.html">
+      topic
+    </a>
+  </header>
+  <div class="right tab-menu menu">
+    
+    <a class="item" data-tab="Lab-08">
+      Lab-08
+    </a>
+    
+    <a class="item" data-tab="01">
+      01
+    </a>
+    
+    <a class="item" data-tab="02">
+      02
+    </a>
+    
+    <a class="item" data-tab="03">
+      03
+    </a>
+    
+    <a class="item" data-tab="04">
+      04
+    </a>
+    
+    <a class="item" data-tab="05">
+      05
+    </a>
+    
+    <a class="item" data-tab="06">
+      06
+    </a>
+    
+    <a class="item" data-tab="07">
+      07
+    </a>
+    
+    <a class="item" data-tab="08">
+      08
+    </a>
+    
+    <a class="item" data-tab="09">
+      09
+    </a>
+    
+    <a class="item" data-tab="Exercises">
+      Exercises
+    </a>
+    
+    <div class="item">
+      
+    </div>
+  </div>
+</div>
+
+<div class="ui segment pushable">
+  <div class="ui inverted labeled icon left inline vertical sidebar menu">
+    
+      
+        <a class="item" href="../../topic-01-html-and-templating/book-00-case-study/index.html">
+          Lab-1.1 Case Study
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic-01-html-and-templating/book-01-harp/index.html">
+          Lab-1.2 Harp & Surge
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic-01-html-and-templating/book-02-templates/index.html">
+          Lab-1.3 Templating
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic-02-css-frameworks/book-a/index.html">
+          Lab-1.4 Semantic UI
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic-02-css-frameworks/book-b/index.html">
+          Lab-1.5 Semantic UI
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic-02-js-review/book-1-javascript-intro/index.html">
+          Lab-2.1 JS Intro
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic-02-js-review/book-2-javascript-fundamentals/index.html">
+          Lab-2.2 JS Basics
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic-03-jquery+dom/book-3-jquery/index.html">
+          Lab-3 JQuery
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic-04-ajax+apis/book-1-ajax-1/index.html">
+          Lab-4.1 Github API
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic-04-ajax+apis/book-2-ajax-2/index.html">
+          Lab-4.2-FoureSquare API
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic-16/book/index.html">
+          Lab-08
+        </a>
+      
+    
+  </div>
+  <div class="pusher" tabindex="-1">
+    <div class="ui basic segment" id="labchat">
+      <br>
+      
+      <div  class="ui tab segment lab" data-tab="Lab-08">
+        <h1>Objectives</h1>
+
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="01">
+        <p>#</p>
+<p>An experiment:</p>
+<p>Change server.start() to server.restart()</p>
+<pre><code>  server.restart((err) =&gt; {
+    if (err) {
+      throw err;
+    }
+
+    console.log(&#39;Server listening at:&#39;, server.info.uri);
+  });</code></pre>
+<p>No change in compilation status. Run time error generated:</p>
+<pre><code>/usr/local/bin/node /Users/edeleastar/repos/modules/entweb/prj2/donation-web-final/index.js
+/Users/edeleastar/repos/modules/entweb/prj2/donation-web-final/index.js:52
+  server.restart((err) =&gt; {
+         ^
+
+TypeError: server.restart is not a function
+    at server.register.err (/Users/edeleastar/repos/modules/entweb/prj2/donation-web-final/index.js:52:10)
+    at process.nextTick (/Users/edeleastar/repos/modules/entweb/prj2/donation-web-final/node_modules/hoek/lib/index.js:858:22)
+    at _combinedTickCallback (internal/process/next_tick.js:67:7)
+    at process._tickCallback (internal/process/next_tick.js:98:9)
+    at Module.runMain (module.js:592:11)
+    at run (bootstrap_node.js:394:7)
+    at startup (bootstrap_node.js:149:9)
+    at bootstrap_node.js:509:3
+
+Process finished with exit code 1</code></pre>
+
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="02">
+        <p>#</p>
+
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="03">
+        <p>#</p>
+<p>Install node/typescript mappings</p>
+<pre><code>npm install --save-dev @types/node
+npm install --save-dev @types/hapi</code></pre>
+<h2>package.json</h2>
+<pre><code>...
+  &quot;devDependencies&quot;: {
+    &quot;@types/hapi&quot;: &quot;^16.1.8&quot;,
+    &quot;@types/node&quot;: &quot;^8.0.20&quot;,
+    &quot;chai&quot;: &quot;^4.1.1&quot;,
+    &quot;mocha&quot;: &quot;^3.0.2&quot;,
+    &quot;sync-request&quot;: &quot;^4.1.0&quot;
+  }
+...</code></pre>
+<p>The type definition file is generated:</p>
+<p><img src="img/03.png" alt=""></p>
+<p>Rename <code>index.js</code> to <code>index.ts</code></p>
+<p>Accept webstorm conversion to typescript:</p>
+<p><img src="img/01.png" alt=""></p>
+<p>This causes a new file to be generated:</p>
+<p><img src="img/02.png" alt=""></p>
+<p>Error here:</p>
+<pre><code>  server.views({
+    engines: {
+      hbs: require(&#39;handlebars&#39;),
+    }</code></pre>
+<p><code>Views is not a valid method</code></p>
+<p>Install vision plugin:</p>
+<pre><code>npm install --save-dev @types/vision</code></pre>
+<p>Still an error - bull check on info:</p>
+<pre><code>    if (server.info) {
+      console.log(&#39;Server listening at:&#39;, server.info.uri);
+    }</code></pre>
+<p>To Launch - webstorm may automatically have reconfigured launch to this:</p>
+<p><img src="img/04.png" alt=""></p>
+<p>Rename index.ts back to index.js in the dialog. The app should launch</p>
+<p>Try </p>
+<pre><code>  server.restart((err) =&gt; {
+    if (err) {
+      throw err;
+    }
+    if (server.info) {
+      console.log(&#39;Server listening at:&#39;, server.info.uri);
+    }
+  });</code></pre>
+<p>This time there will be a compilation error <code>restart does not exist</code>...</p>
+
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="04">
+        <p>#</p>
+<p>Install remaining type definitions:</p>
+<pre><code>npm install --save-dev @types/boom
+npm install --save-dev @types/handlebars
+npm install --save-dev @types/inert
+npm install --save-dev @types/joi
+npm install --save-dev @types/jsonwebtoken
+npm install --save-dev @types/lodash
+npm install --save-dev @types/mongoose
+npm install --save-dev @types/mongoose-seeder
+npm install --save-dev @types/chai
+npm install --save-dev @types/mocha</code></pre>
+<h1>package.json:</h1>
+<pre><code>...
+  &quot;devDependencies&quot;: {
+    &quot;@types/boom&quot;: &quot;^4.3.6&quot;,
+    &quot;@types/chai&quot;: &quot;^4.0.3&quot;,
+    &quot;@types/handlebars&quot;: &quot;^4.0.35&quot;,
+    &quot;@types/hapi&quot;: &quot;^16.1.8&quot;,
+    &quot;@types/inert&quot;: &quot;^4.2.2&quot;,
+    &quot;@types/joi&quot;: &quot;^10.4.1&quot;,
+    &quot;@types/jsonwebtoken&quot;: &quot;^7.2.3&quot;,
+    &quot;@types/lodash&quot;: &quot;^4.14.72&quot;,
+    &quot;@types/mocha&quot;: &quot;^2.2.41&quot;,
+    &quot;@types/mongoose&quot;: &quot;^4.7.19&quot;,
+    &quot;@types/mongoose-seeder&quot;: &quot;^1.2.3&quot;,
+    &quot;@types/node&quot;: &quot;^8.0.20&quot;,
+    &quot;@types/vision&quot;: &quot;^4.1.1&quot;,
+    &quot;chai&quot;: &quot;^4.1.1&quot;,
+    &quot;mocha&quot;: &quot;^3.0.2&quot;,
+    &quot;sync-request&quot;: &quot;^4.1.0&quot;
+  }
+...</code></pre>
+
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="05">
+        <p>#</p>
+
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="06">
+        <p>#</p>
+
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="07">
+        <p>#</p>
+
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="08">
+        <p>#</p>
+
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="09">
+        <p>#</p>
+
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="Exercises">
+        <h1>Solution</h1>
+
+      </div>
+     
+    </div>
+  </div>
+</div>
+<!--<div class="ui bottom fixed borderless right menu">
+  <div class="ui right tiny menu">
+    <div class="ui mini message segment">
+      .
+      <a href="http://creativecommons.org/licenses/by-nc/4.0/"
+         title="External link to http://creativecommons.org/licenses/by-nc/4.0/"
+         target="_blank">Creative Commons License
+      </a>
+    </div>
+  </div>
+</div>-->
+
+<script>
+  $(document).on('keydown', function(e) {
+  e = e || window.event;
+  var nextTab;
+  switch (e.which || e.keyCode) {
+    case 37: // left
+      nextTab = $('.tab-menu a[data-tab].active').prev('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').last();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+
+    case 39: // right
+      nextTab = $('.tab-menu a[data-tab].active').next('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').first();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+  }
+});
+
+</script>
+
+
+
+    <footer>
+
+    </footer>
+    <script>
+      $(document).ready(function() {
+  $('img').addClass('ui image');
+
+  $('.ui.embed').embed();
+
+  const $images = $('.lab img');
+  jQuery.each($images, function(i) {
+    if ($images[i].alt.length > 0) {
+      const divImg = $(document.createElement('div')).addClass(
+        'ui basic segment',
+      );
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass(
+        'ui blue ribbon label',
+      );
+      divLabel.append($images[i].alt);
+      $(divLabel).insertBefore($images[i]);
+    }
+  });
+
+  $('.ui.menu .item').tab({
+    history: true,
+    historyType: 'hash',
+  });
+
+  $('.popup').popup();
+
+  $('.ui.sidebar')
+    .sidebar({ context: $('.pushable') })
+    .sidebar('setting', 'transition', 'slide out')
+    .sidebar('attach events', '#toc');
+});
+
+    </script>
+  </body>
+
+ </html>
