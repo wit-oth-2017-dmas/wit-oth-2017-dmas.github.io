@@ -120,8 +120,8 @@ body
   </header>
   <div class="right tab-menu menu">
     
-    <a class="item" data-tab="Lab-Aurelia 5">
-      Lab-Aurelia 5
+    <a class="item" data-tab="Lab-Aurelia 5 TS">
+      Lab-Aurelia 5 TS
     </a>
     
     <a class="item" data-tab="Exercise Solutions">
@@ -321,13 +321,13 @@ body
       
     
       
-        <a class="active item" href="../../topic-19-aurelia-5/book-b-aurelia-5/index.html">
+        <a class="item" href="../../topic-19-aurelia-5/book-b-aurelia-5/index.html">
           Lab-Aurelia 5
         </a>
       
     
       
-        <a class="item" href="../../topic-19-aurelia-5/book-b-aurelia-5-ts/index.html">
+        <a class="active item" href="../../topic-19-aurelia-5/book-b-aurelia-5-ts/index.html">
           Lab-Aurelia 5 TS
         </a>
       
@@ -337,7 +337,7 @@ body
     <div class="ui basic segment" id="labchat">
       <br>
       
-      <div  class="ui tab segment lab" data-tab="Lab-Aurelia 5">
+      <div  class="ui tab segment lab" data-tab="Lab-Aurelia 5 TS">
         <h1>Objectives</h1>
 <p>Assuming our donation-web app api has been secured with JWT tokens, revised donation-service classes to authenticate against and use these secure routes.</p>
 
@@ -399,14 +399,17 @@ Note: this solution will be invalidated by our forthcoming approach to authentic
 <h2>src/donation-service/async-http-client.js</h2>
 <p>First, change the constructor in import the EventAggregator:</p>
 <h2>src/services/async-http-client.js</h2>
-<pre><code>import {inject} from &#39;aurelia-framework&#39;;
-import {HttpClient} from &#39;aurelia-http-client&#39;;
+<pre><code>import { inject } from &#39;aurelia-framework&#39;;
+import { HttpClient } from &#39;aurelia-http-client&#39;;
 import Fixtures from &#39;./fixtures&#39;;
-import {EventAggregator} from &#39;aurelia-event-aggregator&#39;;
-import {LoginStatus} from &#39;./messages&#39;;
+import { EventAggregator } from &#39;aurelia-event-aggregator&#39;;
+import { LoginStatus } from &#39;./messages&#39;;
+import { User } from &#39;./models&#39;;
 
-@inject(HttpClient, Fixtures, EventAggregator )
+@inject(HttpClient, Fixtures, EventAggregator)
 export default class AsyncHttpClient {
+  http: HttpClient;
+  ea: EventAggregator;
 
   constructor(httpClient, fixtures, ea) {
     this.http = httpClient;
@@ -418,22 +421,24 @@ export default class AsyncHttpClient {
 ...</code></pre>
 <p>Now introduce a new method to authenticate a user to the api:</p>
 <h2>src/services/async-http-client.js</h2>
-<pre><code>  authenticate(url, user) {
-    this.http.post(url, user).then(response =&gt; {
-      const status = response.content;
-      if (status.success) {
-        this.http.configure(configuration =&gt; {
-          configuration.withHeader(&#39;Authorization&#39;, &#39;bearer &#39; + response.content.token);
-        });
-      }
-      this.ea.publish(new LoginStatus(status));
-    }).catch(error =&gt; {
-      const status = {
-        success: false,
-        message: &#39;service not available&#39;
-      };
-      this.ea.publish(new LoginStatus(status));
-    });
+<pre><code>  authenticate(url: string, credentials: {email:string, password:string}) {
+    this.http
+      .post(url, credentials)
+      .then(response =&gt; {
+        const status = response.content;
+        if (status.success) {
+          this.http.configure(configuration =&gt; {
+            configuration.withHeader(
+              &#39;Authorization&#39;,
+              &#39;bearer &#39; + response.content.token,
+            );
+          });
+        }
+        this.ea.publish(new LoginStatus(true));
+      })
+      .catch(error =&gt; {
+        this.ea.publish(new LoginStatus(false, &#39;service not available&#39;));
+      });
   }</code></pre>
 <p>In the above (invoked in the next step from donation-service), will post to an authenticate url - and if successful, attaches the returned token to all subsequent invocations. It will also store the token in local storage in case our app is suspended. However, we are not really making use of this yet.</p>
 <p>An accompanying clear method:</p>
@@ -468,14 +473,9 @@ export default class AsyncHttpClient {
     this.ac.authenticate(&#39;/api/users/authenticate&#39;, user);
   }</code></pre>
 <pre><code>  logout() {
-    const status = {
-      success: false,
-      message: &#39;&#39;
-    };
     this.ac.clearAuthentication();
-   this.ea.publish(new LoginStatus(status));
-  }
-}</code></pre>
+    this.ea.publish(new LoginStatus(false));
+  }</code></pre>
 <p>Try this now and see if it works as expected. In particular make sure you can successfully access protected routes.</p>
 
       </div>
@@ -487,11 +487,14 @@ export default class AsyncHttpClient {
 <h2>src/services/async-http-client.js</h2>
 <pre><code> authenticate(url, user) {
     ...
-      if (status.success) {
-        localStorage.donation = JSON.stringify(response.content);
-        this.http.configure(configuration =&gt; {
-          configuration.withHeader(&#39;Authorization&#39;, &#39;bearer &#39; + response.content.token);
-        });
+        if (status.success) {
+          localStorage.donation = JSON.stringify(response.content);
+          this.http.configure(configuration =&gt; {
+            configuration.withHeader(
+              &#39;Authorization&#39;,
+              &#39;bearer &#39; + response.content.token,
+            );
+          });
     ...
     ...
   }</code></pre>
@@ -536,13 +539,13 @@ export default class AsyncHttpClient {
 <p>Finally, if the token is found, we need to switch to the <code>home</code> router then the app launches.</p>
 <p>First, in the <code>App</code> class, change the constructor to the following:</p>
 <h2>src/spp.js</h2>
-<pre><code>import DonationService from &#39;./services/donation-service&#39;;
-
-@inject(DonationService, Aurelia, EventAggregator)
+<pre><code>
+@inject(Aurelia, EventAggregator, DonationService)
 export class App {
+  router: Router;
+  ds: DonationService;
 
-  constructor(ds, au, ea) {
-    this.au = au;
+  constructor(au: Aurelia, ea: EventAggregator, ds: DonationService) {
     this.ds = ds;
     ea.subscribe(LoginStatus, msg =&gt; {
       this.router.navigate(&#39;/&#39;, { replace: true, trigger: false });
@@ -554,8 +557,9 @@ export class App {
       }
     });
   }
+
 ...</code></pre>
-<p>This represents a slight simplification of our previous attempts.</p>
+<p>The only major change in the above is that we are injecting a dependency on DonationService.</p>
 <p>Also in the App class, introduce the following function:</p>
 <pre><code>  attached() {
     if (this.ds.isAuthenticated()) {
@@ -571,7 +575,7 @@ export class App {
       <div  class="ui tab segment lab" data-tab="06.Exercises">
         <p>Archive of the lab so far:</p>
 <ul>
-<li><a href="https://github.com/edeleastar/donation-client/releases/tag/aurelia.5.end">https://github.com/edeleastar/donation-client/releases/tag/aurelia.5.end</a></li>
+<li><a href="https://github.com/edeleastar/donation-client-ts/releases/tag/aurelia.lab.5.end">https://github.com/edeleastar/donation-client-ts/releases/tag/aurelia.lab.5.end</a></li>
 </ul>
 <h2>Exercise 1:</h2>
 <p>Deploy the donation-web &amp; donation-client apps. There are two potential scenarios:</p>
