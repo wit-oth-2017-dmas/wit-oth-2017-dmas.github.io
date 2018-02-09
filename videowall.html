@@ -1,365 +1,542 @@
  <!DOCTYPE html>
  <html>
    <head>
-
      <meta charset="utf-8">
      <meta name="viewport" content="width=device-width, initial-scale=1">
-
-     
-
-     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css" type="text/css">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/.min.css" rel="stylesheet" />
-
-     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
-     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
-     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.39/css/uikit.min.css" />
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/.min.css" />
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.39/js/uikit.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.39/js/uikit-icons.min.js"></script>
+     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
      <script>hljs.initHighlightingOnLoad();</script>
-
-     
-
-     <style>
-       
-
-body 
-{
-  font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
-}
-
-figcaption
-{
-  margin-bottom: 20px;
-}
-
-.vertical-align
-{
-  display: flex;
-  align-items: center;
-}
-
-.ui.segment.pushable
-{
-  margin: 0;
-  padding: 1rem 0;
-  overflow: visible;
-}
-
-
-
-     </style>
-
    </head>
-
-  <body>
+  <body class="uk-background-muted">
     
+  
+  
+  <div class="uk-background-muted uk-flex uk-flex-center uk-flex-middle uk-text-center uk-padding-small" uk-grid>
+    
+  <div class="uk-width-1-2@m  uk-card uk-card-default uk-padding-small">
+    <h2> Building Modern Web Applications & Services  </h2>
+    <div class="uk-text-muted uk-text-small">
+      
+        All undefined's in Module
+      
+    </div>
+  </div>
 
-
-  <header class="ui center aligned middle aligned stackable grid segment">
-
+    
+  <div class="uk-padding">
     
       
-  <a class="ui blue left corner label">
-    <div id="showTOC" class="popup" data-content="Reveal TOC">
-      <i id="toc" class="sitemap big  icon"></i>
-    </div>
-  </a>
+  <li>
+    <a href="index.html"
+       title="To the top level Topics for this Module" pos="bottom" uk-tooltip>
+      <i class="fas fa-home fa-4x"></i>
+    </a>
+  </li>
+
+      
+  </div>
 
     
+  
 
-    <div class="ui three wide column">
-      <h2> Building Modern Web Applications & Services </h2>
-    </div>
-
-    <div class="ui two wide column">
-      
+    
+  
+    <div class="uk-card uk-card-default uk-padding-small">
+      <ul class="uk-iconnav">
+        
           
-  <div class="two wide column sitemap">
-    <div class="popup" data-content="To the top level Topics for this Module...">
-      <a href="index.html"> <i class="huge home icon"></i> <br> Module Home </a>
-    </div>
-  </div>
-
-        
-    </div>
-
-    
-
-    
-
-    
-
-    
-      <div class="ui three wide column">
-        
-  <div class="four wide column">
-    <div class="ui center aligned mini message segment">
-      Prepared for <a href="https://www.oth-regensburg.de/"> OTH Regensburg </a> by <a href="https://www.wit.ie/about_wit/contact_us/staff_directory/eamonn_deleastar"> Eamonn de Leastar<a>, <a href="https://www.wit.ie"> WIT</a>.
-      <a href="http://creativecommons.org/licenses/by-nc/4.0/"
-         title="External link to http://creativecommons.org/licenses/by-nc/4.0/"
-         target="_blank">Creative Commons License
-      </a>
-    </div>
-  </div>
-
-      </div>
-    
-
-    <div class="three wide column">
-      
-        
-  <div class="ui equal width center aligned grid segment">
-    
-      
-        <div class="column">
-          <div class="popup" data-content="All talk's in Course">
-            <a href="talkwall.html"> <i class="big object group icon"></i> </a>
-            <div class="ui blue mini circular label">
-              75
-            </div>
-          </div>
-        </div>
-      
-    
-      
-        <div class="column">
-          <div class="popup" data-content="All lab's in Course">
-            <a href="labwall.html"> <i class="big lab icon"></i> </a>
-            <div class="ui blue mini circular label">
-              29
-            </div>
-          </div>
-        </div>
-      
-    
-      
-        <div class="column">
-          <div class="popup" data-content="All video's in Course">
-            <a href="videowall.html"> <i class="big film icon"></i> </a>
-            <div class="ui blue mini circular label">
-              6
-            </div>
-          </div>
-        </div>
-      
-    
-      
-    
-      
-    
-  </div>
-
-      
-    </div>
-
-
-  </header>
   
+    
+      
+      
+  <li>
+    <a href="./talkwall.html"
+       title="All slides's in module" pos="bottom" uk-tooltip>
+      <i class="fas fa-object-group   fa-2x" style="color:#009688""></i>
+    </a>
+  </li>
+
+    
   
-    <script>
-      ((window.gitter = {}).chat = {}).options = {
-        room: 'wit-oth-2017-dmas/Lobby'
-      };
-    </script>
-    <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+    
+      
+      
+  <li>
+    <a href="./labwall.html"
+       title="All labs's in module" pos="bottom" uk-tooltip>
+      <i class="fas fa-flask          fa-2x" style="color:#00BCD4""></i>
+    </a>
+  </li>
+
+    
+  
+    
+      
+      
+  <li>
+    <a href="./videowall.html"
+       title="All undefined's in module" pos="bottom" uk-tooltip>
+      <i class=""></i>
+    </a>
+  </li>
+
+    
+  
+    
+  
+    
+  
+    
   
 
+        
+        
+      </ul>
+    </div>
+  
 
+  </div>
 
-  <div class="ui bottom attached segment pushable">
-    <div class="ui inverted labeled icon left inline vertical sidebar menu">
+  
+  <div class="uk-container uk-padding-small">
+    
       
-    </div>
-    <div class="pusher">
-      <div class="ui container">
-        <div class="ui basic segment">
-          <div class="ui centered four doubling stackable cards">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    <div class="uk-child-width-1-4@s uk-flex uk-flex-center" uk-grid uk-height-match="target: > div > .uk-card">
+      
+        
+          <div>
             
               
-                
-  <div class="ui raised link card">
-    <div class="ui center aligned content">
-      <div class="right floated meta"><i class="huge film icon"></i></div>
-      <div class="header"> Overview of Course</div>
-    </div>
-    <div class="ui segment">
-      <div class="ui embed" data-source="youtube" data-id="SgChbSu3j84"></div>
-    </div>
-    <div class="center aligned content">
-      <div class="description">
-        <p>A brief introduction to the modules, its structure, assessment and contents.</p>
+  <div class="uk-card uk-card-default 
+  
+    uk-card-hover
+  
+ uk-card-small uk-text-center uk-animation-scale-up">
+    
+  
+    
+      
+      
+    
+    <a href=topic-00-intro/video-a/SgChbSu3j84>
+  
 
+    
+  <div class="uk-card-header">
+    <div uk-grid>
+      <div class="uk-width-expand@m">
+        <h3> Overview of Course </h3>
       </div>
-    </div>
-    <div class="extra content center aligned">
-      <a href="https://youtu.be/SgChbSu3j84" target="_blank"> video link</a>
+      <div class="uk-width-1-4@m">
+        <i class="  > </i>
+      </div>
     </div>
   </div>
 
-              
-            
-              
-                
-  <div class="ui raised link card">
-    <div class="ui center aligned content">
-      <div class="right floated meta"><i class="huge film icon"></i></div>
-      <div class="header"> Semantic UI Framework</div>
+    
+  
+    <div class="uk-card-media">
+      <iframe width="1280" height="720" src="https://www.youtube.com/embed/SgChbSu3j84" allow="autoplay; encrypted-media" allowfullscreen uk-responsive></iframe>
     </div>
-    <div class="ui segment">
-      <div class="ui embed" data-source="youtube" data-id="uvR1Ci9zL7U"></div>
+    <div class="uk-card-footer">
+      <a href="https://youtu.be/SgChbSu3j84" target="_blank"><i class="fas fa-link fa-2x"></i></a>
     </div>
-    <div class="center aligned content">
-      <div class="description">
-        <p>A review of some of the principle features of the Semantic UI CSS Framework.</p>
+  
 
-      </div>
-    </div>
-    <div class="extra content center aligned">
-      <a href="https://youtu.be/uvR1Ci9zL7U" target="_blank"> video link</a>
-    </div>
+    
+  <div class="uk-card-body">
+    
+      <i class=""></i>
+    
   </div>
 
-              
-            
-              
-                
-  <div class="ui raised link card">
-    <div class="ui center aligned content">
-      <div class="right floated meta"><i class="huge film icon"></i></div>
-      <div class="header"> Javascript Basics</div>
-    </div>
-    <div class="ui segment">
-      <div class="ui embed" data-source="youtube" data-id="DWES4g06bTw"></div>
-    </div>
-    <div class="center aligned content">
-      <div class="description">
-        <p>A brief tour of variables, boolean logic and objects</p>
+    
+  
+    </a>
+  
 
-      </div>
+    
+  
+    <div class="uk-card-footer">
+      <p> <p>A brief introduction to the modules, its structure, assessment and contents.</p>
+</p>
     </div>
-    <div class="extra content center aligned">
-      <a href="https://youtu.be/DWES4g06bTw" target="_blank"> video link</a>
-    </div>
+  
+
+    
+  
+
   </div>
 
-              
-            
-              
-                
-  <div class="ui raised link card">
-    <div class="ui center aligned content">
-      <div class="right floated meta"><i class="huge film icon"></i></div>
-      <div class="header"> Javascript Arrays</div>
-    </div>
-    <div class="ui segment">
-      <div class="ui embed" data-source="youtube" data-id="oLt1N1dwOOs"></div>
-    </div>
-    <div class="center aligned content">
-      <div class="description">
-        <p>Exploring Arrays in detail, including array methods, iteration and simple arrays of objects.</p>
-
-      </div>
-    </div>
-    <div class="extra content center aligned">
-      <a href="https://youtu.be/oLt1N1dwOOs" target="_blank"> video link</a>
-    </div>
-  </div>
-
-              
-            
-              
-                
-  <div class="ui raised link card">
-    <div class="ui center aligned content">
-      <div class="right floated meta"><i class="huge film icon"></i></div>
-      <div class="header"> Lab Preview</div>
-    </div>
-    <div class="ui segment">
-      <div class="ui embed" data-source="youtube" data-id="n_eZrjTUtkI"></div>
-    </div>
-    <div class="center aligned content">
-      <div class="description">
-        <p>Quick intro to the purpose and structure of the labs.</p>
-
-      </div>
-    </div>
-    <div class="extra content center aligned">
-      <a href="https://youtu.be/n_eZrjTUtkI" target="_blank"> video link</a>
-    </div>
-  </div>
-
-              
-            
-              
-                
-  <div class="ui raised link card">
-    <div class="ui center aligned content">
-      <div class="right floated meta"><i class="huge film icon"></i></div>
-      <div class="header"> DOM & JQuery</div>
-    </div>
-    <div class="ui segment">
-      <div class="ui embed" data-source="youtube" data-id="QJYMkl266GE"></div>
-    </div>
-    <div class="center aligned content">
-      <div class="description">
-        <p>Review of the DOM and brief introduction to JQuery</p>
-
-      </div>
-    </div>
-    <div class="extra content center aligned">
-      <a href="https://youtu.be/QJYMkl266GE" target="_blank"> video link</a>
-    </div>
-  </div>
-
-              
             
           </div>
-        </div>
+        
+      
+        
+          <div>
+            
+              
+  <div class="uk-card uk-card-default 
+  
+    uk-card-hover
+  
+ uk-card-small uk-text-center uk-animation-scale-up">
+    
+  
+    
+      
+      
+    
+    <a href=topic-02-css-frameworks/video-1/uvR1Ci9zL7U>
+  
+
+    
+  <div class="uk-card-header">
+    <div uk-grid>
+      <div class="uk-width-expand@m">
+        <h3> Semantic UI Framework </h3>
+      </div>
+      <div class="uk-width-1-4@m">
+        <i class="  > </i>
       </div>
     </div>
   </div>
 
+    
+  
+    <div class="uk-card-media">
+      <iframe width="1280" height="720" src="https://www.youtube.com/embed/uvR1Ci9zL7U" allow="autoplay; encrypted-media" allowfullscreen uk-responsive></iframe>
+    </div>
+    <div class="uk-card-footer">
+      <a href="https://youtu.be/uvR1Ci9zL7U" target="_blank"><i class="fas fa-link fa-2x"></i></a>
+    </div>
+  
 
-    <footer>
+    
+  <div class="uk-card-body">
+    
+      <i class=""></i>
+    
+  </div>
 
-    </footer>
-    <script>
-      $(document).ready(function() {
-  $('img').addClass('ui image');
+    
+  
+    </a>
+  
 
-  $('.ui.embed').embed();
+    
+  
+    <div class="uk-card-footer">
+      <p> <p>A review of some of the principle features of the Semantic UI CSS Framework.</p>
+</p>
+    </div>
+  
 
-  const $images = $('.lab img');
-  jQuery.each($images, function(i) {
-    if ($images[i].alt.length > 0) {
-      const divImg = $(document.createElement('div')).addClass(
-        'ui basic segment',
-      );
-      $($images[i]).wrap(divImg);
-      const divLabel = $(document.createElement('div')).addClass(
-        'ui blue ribbon label',
-      );
-      divLabel.append($images[i].alt);
-      $(divLabel).insertBefore($images[i]);
-    }
-  });
+    
+  
 
-  $('.ui.menu .item').tab({
-    history: true,
-    historyType: 'hash',
-  });
+  </div>
 
-  $('.popup').popup();
+            
+          </div>
+        
+      
+        
+          <div>
+            
+              
+  <div class="uk-card uk-card-default 
+  
+    uk-card-hover
+  
+ uk-card-small uk-text-center uk-animation-scale-up">
+    
+  
+    
+      
+      
+    
+    <a href=topic-02-js-review/video-1/DWES4g06bTw>
+  
 
-  $('.ui.sidebar')
-    .sidebar({ context: $('.pushable') })
-    .sidebar('setting', 'transition', 'slide out')
-    .sidebar('attach events', '#toc');
-});
+    
+  <div class="uk-card-header">
+    <div uk-grid>
+      <div class="uk-width-expand@m">
+        <h3> Javascript Basics </h3>
+      </div>
+      <div class="uk-width-1-4@m">
+        <i class="  > </i>
+      </div>
+    </div>
+  </div>
 
-    </script>
+    
+  
+    <div class="uk-card-media">
+      <iframe width="1280" height="720" src="https://www.youtube.com/embed/DWES4g06bTw" allow="autoplay; encrypted-media" allowfullscreen uk-responsive></iframe>
+    </div>
+    <div class="uk-card-footer">
+      <a href="https://youtu.be/DWES4g06bTw" target="_blank"><i class="fas fa-link fa-2x"></i></a>
+    </div>
+  
+
+    
+  <div class="uk-card-body">
+    
+      <i class=""></i>
+    
+  </div>
+
+    
+  
+    </a>
+  
+
+    
+  
+    <div class="uk-card-footer">
+      <p> <p>A brief tour of variables, boolean logic and objects</p>
+</p>
+    </div>
+  
+
+    
+  
+
+  </div>
+
+            
+          </div>
+        
+      
+        
+          <div>
+            
+              
+  <div class="uk-card uk-card-default 
+  
+    uk-card-hover
+  
+ uk-card-small uk-text-center uk-animation-scale-up">
+    
+  
+    
+      
+      
+    
+    <a href=topic-02-js-review/video-2/oLt1N1dwOOs>
+  
+
+    
+  <div class="uk-card-header">
+    <div uk-grid>
+      <div class="uk-width-expand@m">
+        <h3> Javascript Arrays </h3>
+      </div>
+      <div class="uk-width-1-4@m">
+        <i class="  > </i>
+      </div>
+    </div>
+  </div>
+
+    
+  
+    <div class="uk-card-media">
+      <iframe width="1280" height="720" src="https://www.youtube.com/embed/oLt1N1dwOOs" allow="autoplay; encrypted-media" allowfullscreen uk-responsive></iframe>
+    </div>
+    <div class="uk-card-footer">
+      <a href="https://youtu.be/oLt1N1dwOOs" target="_blank"><i class="fas fa-link fa-2x"></i></a>
+    </div>
+  
+
+    
+  <div class="uk-card-body">
+    
+      <i class=""></i>
+    
+  </div>
+
+    
+  
+    </a>
+  
+
+    
+  
+    <div class="uk-card-footer">
+      <p> <p>Exploring Arrays in detail, including array methods, iteration and simple arrays of objects.</p>
+</p>
+    </div>
+  
+
+    
+  
+
+  </div>
+
+            
+          </div>
+        
+      
+        
+          <div>
+            
+              
+  <div class="uk-card uk-card-default 
+  
+    uk-card-hover
+  
+ uk-card-small uk-text-center uk-animation-scale-up">
+    
+  
+    
+      
+      
+    
+    <a href=topic-02-js-review/video-3/n_eZrjTUtkI>
+  
+
+    
+  <div class="uk-card-header">
+    <div uk-grid>
+      <div class="uk-width-expand@m">
+        <h3> Lab Preview </h3>
+      </div>
+      <div class="uk-width-1-4@m">
+        <i class="  > </i>
+      </div>
+    </div>
+  </div>
+
+    
+  
+    <div class="uk-card-media">
+      <iframe width="1280" height="720" src="https://www.youtube.com/embed/n_eZrjTUtkI" allow="autoplay; encrypted-media" allowfullscreen uk-responsive></iframe>
+    </div>
+    <div class="uk-card-footer">
+      <a href="https://youtu.be/n_eZrjTUtkI" target="_blank"><i class="fas fa-link fa-2x"></i></a>
+    </div>
+  
+
+    
+  <div class="uk-card-body">
+    
+      <i class=""></i>
+    
+  </div>
+
+    
+  
+    </a>
+  
+
+    
+  
+    <div class="uk-card-footer">
+      <p> <p>Quick intro to the purpose and structure of the labs.</p>
+</p>
+    </div>
+  
+
+    
+  
+
+  </div>
+
+            
+          </div>
+        
+      
+        
+          <div>
+            
+              
+  <div class="uk-card uk-card-default 
+  
+    uk-card-hover
+  
+ uk-card-small uk-text-center uk-animation-scale-up">
+    
+  
+    
+      
+      
+    
+    <a href=topic-03-jquery+dom/video/QJYMkl266GE>
+  
+
+    
+  <div class="uk-card-header">
+    <div uk-grid>
+      <div class="uk-width-expand@m">
+        <h3> DOM & JQuery </h3>
+      </div>
+      <div class="uk-width-1-4@m">
+        <i class="  > </i>
+      </div>
+    </div>
+  </div>
+
+    
+  
+    <div class="uk-card-media">
+      <iframe width="1280" height="720" src="https://www.youtube.com/embed/QJYMkl266GE" allow="autoplay; encrypted-media" allowfullscreen uk-responsive></iframe>
+    </div>
+    <div class="uk-card-footer">
+      <a href="https://youtu.be/QJYMkl266GE" target="_blank"><i class="fas fa-link fa-2x"></i></a>
+    </div>
+  
+
+    
+  <div class="uk-card-body">
+    
+      <i class=""></i>
+    
+  </div>
+
+    
+  
+    </a>
+  
+
+    
+  
+    <div class="uk-card-footer">
+      <p> <p>Review of the DOM and brief introduction to JQuery</p>
+</p>
+    </div>
+  
+
+    
+  
+
+  </div>
+
+            
+          </div>
+        
+      
+    </div>
+  </div>
+
+
   </body>
-
  </html>

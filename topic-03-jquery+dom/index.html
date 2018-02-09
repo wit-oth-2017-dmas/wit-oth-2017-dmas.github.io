@@ -1,415 +1,439 @@
  <!DOCTYPE html>
  <html>
    <head>
-
      <meta charset="utf-8">
      <meta name="viewport" content="width=device-width, initial-scale=1">
-
-     
-
-     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css" type="text/css">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" rel="stylesheet" />
-
-     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
-     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
-     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.39/css/uikit.min.css" />
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-light.min.css" />
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.39/js/uikit.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.39/js/uikit-icons.min.js"></script>
+     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
      <script>hljs.initHighlightingOnLoad();</script>
-
-     
-
-     <style>
-       
-
-body 
-{
-  font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
-}
-
-figcaption
-{
-  margin-bottom: 20px;
-}
-
-.vertical-align
-{
-  display: flex;
-  align-items: center;
-}
-
-.ui.segment.pushable
-{
-  margin: 0;
-  padding: 1rem 0;
-  overflow: visible;
-}
-
-
-
-     </style>
-
    </head>
-
-  <body>
+  <body class="uk-background-muted">
     
-
   
-  <header class="ui center aligned middle aligned stackable grid segment">
-
+  <div class="uk-background-muted uk-flex uk-flex-center uk-flex-middle uk-text-center uk-padding-small" uk-grid>
     
+  <div class="uk-width-1-2@m  uk-card uk-card-default uk-padding-small">
+    <h2> 3: DOM & JQuery  </h2>
+    <div class="uk-text-muted uk-text-small">
       
-  <a class="ui blue left corner label">
-    <div id="showTOC" class="popup" data-content="Reveal TOC">
-      <i id="toc" class="sitemap big  icon"></i>
-    </div>
-  </a>
-
-    
-
-    <div class="ui three wide column">
-      <h2> 3: DOM & JQuery </h2>
-    </div>
-
-    <div class="ui two wide column">
+        Prepared for <a href="https://www.oth-regensburg.de/"> OTH Regensburg </a> by <a href="https://www.wit.ie/about_wit/contact_us/staff_directory/eamonn_deleastar"> Eamonn de Leastar<a>, <a href="https://www.wit.ie"> WIT</a>
       
-          
-  <div class="two wide column sitemap">
-    <div class="popup" data-content="To the top level Topics for this Module...">
-      <a href="../index.html"> <i class="huge home icon"></i> <br> Module Home </a>
     </div>
   </div>
 
-        
-    </div>
-
     
-
+  <div class="uk-padding">
     
-
-    
-
-    
-      <div class="ui three wide column">
-        
-  <div class="four wide column">
-    <div class="ui center aligned mini message segment">
-      Prepared for <a href="https://www.oth-regensburg.de/"> OTH Regensburg </a> by <a href="https://www.wit.ie/about_wit/contact_us/staff_directory/eamonn_deleastar"> Eamonn de Leastar<a>, <a href="https://www.wit.ie"> WIT</a>.
-      <a href="http://creativecommons.org/licenses/by-nc/4.0/"
-         title="External link to http://creativecommons.org/licenses/by-nc/4.0/"
-         target="_blank">Creative Commons License
-      </a>
-    </div>
-  </div>
-
-      </div>
-    
-
-    <div class="three wide column">
       
-    </div>
-
-
-  </header>
-  
-  
-    <script>
-      ((window.gitter = {}).chat = {}).options = {
-        room: 'wit-oth-2017-dmas/Lobby'
-      };
-    </script>
-    <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
-  
-
-
-
-  <div class="ui segment pushable">
-    <div class="ui inverted labeled icon left inline vertical sidebar menu">
-      <div class="header">
-        <a class="item" href="#">
-          
-        </a>
-      </div>
-      <div class="menu">
-        
-          <a class="item" href="talk-4-js-browser/js-browser.pdf">
-            JS Browser Tools
-          </a>
-        
-          <a class="item" href="talk-5-dom/dom.pdf">
-            DOM
-          </a>
-        
-          <a class="item" href="talk-6-jquery/jquery.pdf">
-            JQuery
-          </a>
-        
-          <a class="item" href="book-3-jquery/index.html">
-            Lab-3 JQuery
-          </a>
-        
-          <a class="item" href="video/QJYMkl266GE">
-            DOM & JQuery
-          </a>
-        
-      </div>
-    </div>
-    <div class="pusher">
-      <div class="ui basic container segment">
-       
-         
-  
-    <section class="ui attached segment">
-      <a class="ui right ribbon label">videos</a>
-      <div class="ui centered four doubling stackable cards">
-        
-          
-            
-  <div class="ui raised link card">
-    <div class="ui center aligned content">
-      <div class="right floated meta"><i class="huge film icon"></i></div>
-      <div class="header"> DOM & JQuery</div>
-    </div>
-    <div class="ui segment">
-      <div class="ui embed" data-source="youtube" data-id="QJYMkl266GE"></div>
-    </div>
-    <div class="center aligned content">
-      <div class="description">
-        <p>Review of the DOM and brief introduction to JQuery</p>
-
-      </div>
-    </div>
-    <div class="extra content center aligned">
-      <a href="https://youtu.be/QJYMkl266GE" target="_blank"> video link</a>
-    </div>
-  </div>
-
-          
-        
-      </div>
-    </section>
-  
-
-         
-         
-  
-    <section class="ui attached segment">
-      <a class="ui right ribbon label">talks</a>
-      <div class="ui centered four doubling stackable cards">
-        
-          
-            
-
-  <div class="ui raised link card">
-
-    <div class="center aligned content">
-      <div class="right floated meta"><i class="huge object group icon"></i></div>
-      <div class="header"> JS Browser Tools</div>
-    </div>
-
-    
-    <a class="ui raised link card" href="talk-4-js-browser/js-browser.pdf" target="_blank">
-    
-      <div class="image">
-        <img class="ui bordered rounded image" src="talk-4-js-browser/js-browser.png">
-      </div>
+  <li>
+    <a href="../index.html"
+       title="To the top level Topics for this Module" pos="bottom" uk-tooltip>
+      <i class="fas fa-home fa-4x"></i>
     </a>
+  </li>
 
-
-    <div class="center aligned content">
-      <div class="description">
-        <p>Simple JavaScript client-side applications. Introducing Chrome Developer tools.</p>
-
-      </div>
-    </div>
       
-
-    
-
   </div>
 
+    
+  
 
-
-          
+    
+  
+    <div class="uk-card uk-card-default uk-padding-small">
+      <ul class="uk-iconnav">
+        
         
           
-            
-
-  <div class="ui raised link card">
-
-    <div class="center aligned content">
-      <div class="right floated meta"><i class="huge object group icon"></i></div>
-      <div class="header"> DOM</div>
-    </div>
-
+  
     
-    <a class="ui raised link card" href="talk-5-dom/dom.pdf" target="_blank">
-    
-      <div class="image">
-        <img class="ui bordered rounded image" src="talk-5-dom/dom.png">
-      </div>
+      
+      
+  <li>
+    <a href="../talkwall.html"
+       title="All slides's in module" pos="bottom" uk-tooltip>
+      <i class="fas fa-object-group   fa-2x" style="color:#009688""></i>
     </a>
+  </li>
 
-
-    <div class="center aligned content">
-      <div class="description">
-        <p>The DOM: Javascript manipulates the contents of the web page through a standard abstraction called the Document Object Model (DOM), hence the reason for this brief introduction.</p>
-
-      </div>
-    </div>
+    
+  
+    
       
-
-    
-
-  </div>
-
-
-
-          
-        
-          
-            
-
-  <div class="ui raised link card">
-
-    <div class="center aligned content">
-      <div class="right floated meta"><i class="huge object group icon"></i></div>
-      <div class="header"> JQuery</div>
-    </div>
-
-    
-    <a class="ui raised link card" href="talk-6-jquery/jquery.pdf" target="_blank">
-    
-      <div class="image">
-        <img class="ui bordered rounded image" src="talk-6-jquery/jquery.png">
-      </div>
+      
+  <li>
+    <a href="../labwall.html"
+       title="All labs's in module" pos="bottom" uk-tooltip>
+      <i class="fas fa-flask          fa-2x" style="color:#00BCD4""></i>
     </a>
+  </li>
 
-
-    <div class="center aligned content">
-      <div class="description">
-        <p>jQuery: although not as popular as it once may have been, rumours of its death have likely been greatly exaggerated. Undoubtedly losing ground to modern frameworks. it will still probably be in widespread use for quite some time yet.</p>
-
-      </div>
-    </div>
+    
+  
+    
       
-
-    
-
-  </div>
-
-
-
-          
-        
-      </div>
-    </section>
-  
-
-         
-         
-  
-    <section class="ui attached segment">
-      <a class="ui right ribbon label">labs</a>
-      <div class="ui centered four doubling stackable cards">
-        
-          
-            
-
-  <div class="ui raised link card">
-
-    <div class="center aligned content">
-      <div class="right floated meta"><i class="huge lab icon"></i></div>
-      <div class="header"> Lab-3 JQuery</div>
-    </div>
-
-    
-    <a class="ui raised link card" href="book-3-jquery/index.html">
-    
-      <div class="image">
-        <img class="ui bordered rounded image" src="book-3-jquery/img/main.jpg">
-      </div>
+      
+  <li>
+    <a href="../videowall.html"
+       title="All undefined's in module" pos="bottom" uk-tooltip>
+      <i class=""></i>
     </a>
-
-
-    <div class="center aligned content">
-      <div class="description">
-        <p>Use both native JavaScript and JQuery to access and manipulate the DOM.</p>
-
-      </div>
-    </div>
-      
+  </li>
 
     
+  
+    
+  
+    
+  
+    
+  
+
+        
+      </ul>
+    </div>
+  
 
   </div>
 
-
-
-          
+  
+  <div class="uk-container uk-padding-small">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    <div class="uk-child-width-1-4@s uk-flex uk-flex-center" uk-grid uk-height-match="target: > div > .uk-card">
+      
         
+          <div>
+            
+              
+  <div class="uk-card uk-card-default 
+  
+    uk-card-hover
+  
+ uk-card-small uk-text-center uk-animation-scale-up">
+    
+  
+    
+      
+    
+    <a href=.//talk-4-js-browser/js-browser.pdf target="_blank">
+  
+
+    
+  <div class="uk-card-header">
+    <div uk-grid>
+      <div class="uk-width-expand@m">
+        <h3> JS Browser Tools </h3>
       </div>
-    </section>
-  
-
-         
-         
-  
-
-         
-         
-  
-
-         
-         
-  
-
-         
+      <div class="uk-width-1-4@m">
+        <i class=" fas fa-object-group   fa-2x" style="color:#009688" > </i>
       </div>
     </div>
   </div>
 
+    
+  
 
-    <footer>
+    
+  <div class="uk-card-body">
+    
+      <img src="./talk-4-js-browser/js-browser.png">
+    
+  </div>
 
-    </footer>
-    <script>
-      $(document).ready(function() {
-  $('img').addClass('ui image');
+    
+  
+    </a>
+  
 
-  $('.ui.embed').embed();
+    
+  
+    <div class="uk-card-footer">
+      <p> <p>Simple JavaScript client-side applications. Introducing Chrome Developer tools.</p>
+</p>
+    </div>
+  
 
-  const $images = $('.lab img');
-  jQuery.each($images, function(i) {
-    if ($images[i].alt.length > 0) {
-      const divImg = $(document.createElement('div')).addClass(
-        'ui basic segment',
-      );
-      $($images[i]).wrap(divImg);
-      const divLabel = $(document.createElement('div')).addClass(
-        'ui blue ribbon label',
-      );
-      divLabel.append($images[i].alt);
-      $(divLabel).insertBefore($images[i]);
-    }
-  });
+    
+  
 
-  $('.ui.menu .item').tab({
-    history: true,
-    historyType: 'hash',
-  });
+  </div>
 
-  $('.popup').popup();
+            
+          </div>
+        
+      
+        
+          <div>
+            
+              
+  <div class="uk-card uk-card-default 
+  
+    uk-card-hover
+  
+ uk-card-small uk-text-center uk-animation-scale-up">
+    
+  
+    
+      
+    
+    <a href=.//talk-5-dom/dom.pdf target="_blank">
+  
 
-  $('.ui.sidebar')
-    .sidebar({ context: $('.pushable') })
-    .sidebar('setting', 'transition', 'slide out')
-    .sidebar('attach events', '#toc');
-});
+    
+  <div class="uk-card-header">
+    <div uk-grid>
+      <div class="uk-width-expand@m">
+        <h3> DOM </h3>
+      </div>
+      <div class="uk-width-1-4@m">
+        <i class=" fas fa-object-group   fa-2x" style="color:#009688" > </i>
+      </div>
+    </div>
+  </div>
 
-    </script>
+    
+  
+
+    
+  <div class="uk-card-body">
+    
+      <img src="./talk-5-dom/dom.png">
+    
+  </div>
+
+    
+  
+    </a>
+  
+
+    
+  
+    <div class="uk-card-footer">
+      <p> <p>The DOM: Javascript manipulates the contents of the web page through a standard abstraction called the Document Object Model (DOM), hence the reason for this brief introduction.</p>
+</p>
+    </div>
+  
+
+    
+  
+
+  </div>
+
+            
+          </div>
+        
+      
+        
+          <div>
+            
+              
+  <div class="uk-card uk-card-default 
+  
+    uk-card-hover
+  
+ uk-card-small uk-text-center uk-animation-scale-up">
+    
+  
+    
+      
+    
+    <a href=.//talk-6-jquery/jquery.pdf target="_blank">
+  
+
+    
+  <div class="uk-card-header">
+    <div uk-grid>
+      <div class="uk-width-expand@m">
+        <h3> JQuery </h3>
+      </div>
+      <div class="uk-width-1-4@m">
+        <i class=" fas fa-object-group   fa-2x" style="color:#009688" > </i>
+      </div>
+    </div>
+  </div>
+
+    
+  
+
+    
+  <div class="uk-card-body">
+    
+      <img src="./talk-6-jquery/jquery.png">
+    
+  </div>
+
+    
+  
+    </a>
+  
+
+    
+  
+    <div class="uk-card-footer">
+      <p> <p>jQuery: although not as popular as it once may have been, rumours of its death have likely been greatly exaggerated. Undoubtedly losing ground to modern frameworks. it will still probably be in widespread use for quite some time yet.</p>
+</p>
+    </div>
+  
+
+    
+  
+
+  </div>
+
+            
+          </div>
+        
+      
+        
+          <div>
+            
+              
+  <div class="uk-card uk-card-default 
+  
+    uk-card-hover
+  
+ uk-card-small uk-text-center uk-animation-scale-up">
+    
+  
+    
+      
+      
+    
+    <a href=./book-3-jquery/index.html>
+  
+
+    
+  <div class="uk-card-header">
+    <div uk-grid>
+      <div class="uk-width-expand@m">
+        <h3> Lab-3 JQuery</h3>
+      </div>
+      <div class="uk-width-1-4@m">
+        <i class=" fas fa-flask          fa-2x" style="color:#00BCD4" > </i>
+      </div>
+    </div>
+  </div>
+
+    
+  
+
+    
+  <div class="uk-card-body">
+    
+      <img src="./book-3-jquery/img/main.jpg">
+    
+  </div>
+
+    
+  
+    </a>
+  
+
+    
+  
+    <div class="uk-card-footer">
+      <p> <p>Use both native JavaScript and JQuery to access and manipulate the DOM.</p>
+</p>
+    </div>
+  
+
+    
+  
+
+  </div>
+
+            
+          </div>
+        
+      
+        
+          <div>
+            
+              
+  <div class="uk-card uk-card-default 
+  
+    uk-card-hover
+  
+ uk-card-small uk-text-center uk-animation-scale-up">
+    
+  
+    
+      
+      
+    
+    <a href=./video/QJYMkl266GE>
+  
+
+    
+  <div class="uk-card-header">
+    <div uk-grid>
+      <div class="uk-width-expand@m">
+        <h3> DOM & JQuery </h3>
+      </div>
+      <div class="uk-width-1-4@m">
+        <i class="  > </i>
+      </div>
+    </div>
+  </div>
+
+    
+  
+    <div class="uk-card-media">
+      <iframe width="1280" height="720" src="https://www.youtube.com/embed/QJYMkl266GE" allow="autoplay; encrypted-media" allowfullscreen uk-responsive></iframe>
+    </div>
+    <div class="uk-card-footer">
+      <a href="https://youtu.be/QJYMkl266GE" target="_blank"><i class="fas fa-link fa-2x"></i></a>
+    </div>
+  
+
+    
+  <div class="uk-card-body">
+    
+      <i class=""></i>
+    
+  </div>
+
+    
+  
+    </a>
+  
+
+    
+  
+    <div class="uk-card-footer">
+      <p> <p>Review of the DOM and brief introduction to JQuery</p>
+</p>
+    </div>
+  
+
+    
+  
+
+  </div>
+
+            
+          </div>
+        
+      
+    </div>
+  </div>
+
+
   </body>
-
  </html>

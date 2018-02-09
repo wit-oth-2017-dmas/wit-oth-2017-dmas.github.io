@@ -1,781 +1,1086 @@
  <!DOCTYPE html>
  <html>
    <head>
-
      <meta charset="utf-8">
      <meta name="viewport" content="width=device-width, initial-scale=1">
-
-     
-
-     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css" type="text/css">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" rel="stylesheet" />
-
-     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
-     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
-     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.39/css/uikit.min.css" />
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-light.min.css" />
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.39/js/uikit.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.39/js/uikit-icons.min.js"></script>
+     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
      <script>hljs.initHighlightingOnLoad();</script>
-
-     
-
-     <style>
-       
-
-body 
-{
-  font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
-}
-
-figcaption
-{
-  margin-bottom: 20px;
-}
-
-.vertical-align
-{
-  display: flex;
-  align-items: center;
-}
-
-.ui.segment.pushable
-{
-  margin: 0;
-  padding: 1rem 0;
-  overflow: visible;
-}
-
-
-
-     </style>
-
    </head>
-
-  <body>
+  <body class="uk-background-muted">
     
-
   
-  <header class="ui center aligned middle aligned stackable grid segment">
-
+  <div class="uk-background-muted uk-flex uk-flex-center uk-flex-middle uk-text-center uk-padding-small" uk-grid>
     
+  <div class="uk-width-1-2@m  uk-card uk-card-default uk-padding-small">
+    <h2> 2: JavaScript Review  </h2>
+    <div class="uk-text-muted uk-text-small">
       
-  <a class="ui blue left corner label">
-    <div id="showTOC" class="popup" data-content="Reveal TOC">
-      <i id="toc" class="sitemap big  icon"></i>
-    </div>
-  </a>
-
-    
-
-    <div class="ui three wide column">
-      <h2> 2: JavaScript Review </h2>
-    </div>
-
-    <div class="ui two wide column">
-      
-          
-  <div class="two wide column sitemap">
-    <div class="popup" data-content="To the top level Topics for this Module...">
-      <a href="../index.html"> <i class="huge home icon"></i> <br> Module Home </a>
-    </div>
-  </div>
-
-        
-    </div>
-
-    
-
-    
-
-    
-
-    
-      <div class="ui three wide column">
-        
-  <div class="four wide column">
-    <div class="ui center aligned mini message segment">
-      Prepared for <a href="https://www.oth-regensburg.de/"> OTH Regensburg </a> by <a href="https://www.wit.ie/about_wit/contact_us/staff_directory/eamonn_deleastar"> Eamonn de Leastar<a>, <a href="https://www.wit.ie"> WIT</a>.
-      <a href="http://creativecommons.org/licenses/by-nc/4.0/"
-         title="External link to http://creativecommons.org/licenses/by-nc/4.0/"
-         target="_blank">Creative Commons License
-      </a>
-    </div>
-  </div>
-
-      </div>
-    
-
-    <div class="three wide column">
+        Prepared for <a href="https://www.oth-regensburg.de/"> OTH Regensburg </a> by <a href="https://www.wit.ie/about_wit/contact_us/staff_directory/eamonn_deleastar"> Eamonn de Leastar<a>, <a href="https://www.wit.ie"> WIT</a>
       
     </div>
-
-
-  </header>
-  
-  
-    <script>
-      ((window.gitter = {}).chat = {}).options = {
-        room: 'wit-oth-2017-dmas/Lobby'
-      };
-    </script>
-    <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
-  
-
-
-
-  <div class="ui segment pushable">
-    <div class="ui inverted labeled icon left inline vertical sidebar menu">
-      <div class="header">
-        <a class="item" href="#">
-          
-        </a>
-      </div>
-      <div class="menu">
-        
-          <a class="item" href="talk-a-js-background/js-background.pdf">
-            JS Introduction
-          </a>
-        
-          <a class="item" href="talk-b-js-varialbes/js-variables.pdf">
-            Variables
-          </a>
-        
-          <a class="item" href="talk-c-js-boolean-logic/js-boolean-logic.pdf">
-            Boolean Logic
-          </a>
-        
-          <a class="item" href="talk-d-js-variables-&-objects/js-variables-&-objects.pdf">
-            Const, Let & Objects
-          </a>
-        
-          <a class="item" href="talk-f-arrays-basics/arrays-basics.pdf">
-            Arrays: Basics
-          </a>
-        
-          <a class="item" href="talk-g-array-methods/array-methods.pdf">
-            Array Methods
-          </a>
-        
-          <a class="item" href="talk-h-array-iteration/array-iteration.pdf">
-            Array Iteration
-          </a>
-        
-          <a class="item" href="talk-i-arrays-of-strings/arrays-of-strings.pdf">
-            Arrays of Strings
-          </a>
-        
-          <a class="item" href="talk-j-arrays-of-objects/arrays-of-objects.pdf">
-            Arrays of Objects
-          </a>
-        
-          <a class="item" href="talk-k-es-next/es-next.pdf">
-            ES Next
-          </a>
-        
-          <a class="item" href="book-1-javascript-intro/index.html">
-            Lab-2.1 JS Intro
-          </a>
-        
-          <a class="item" href="book-2-javascript-fundamentals/index.html">
-            Lab-2.2 JS Basics
-          </a>
-        
-          <a class="item" href="video-1/DWES4g06bTw">
-            Javascript Basics
-          </a>
-        
-          <a class="item" href="video-2/oLt1N1dwOOs">
-            Javascript Arrays
-          </a>
-        
-          <a class="item" href="video-3/n_eZrjTUtkI">
-            Lab Preview
-          </a>
-        
-      </div>
-    </div>
-    <div class="pusher">
-      <div class="ui basic container segment">
-       
-         
-  
-    <section class="ui attached segment">
-      <a class="ui right ribbon label">videos</a>
-      <div class="ui centered four doubling stackable cards">
-        
-          
-            
-  <div class="ui raised link card">
-    <div class="ui center aligned content">
-      <div class="right floated meta"><i class="huge film icon"></i></div>
-      <div class="header"> Javascript Basics</div>
-    </div>
-    <div class="ui segment">
-      <div class="ui embed" data-source="youtube" data-id="DWES4g06bTw"></div>
-    </div>
-    <div class="center aligned content">
-      <div class="description">
-        <p>A brief tour of variables, boolean logic and objects</p>
-
-      </div>
-    </div>
-    <div class="extra content center aligned">
-      <a href="https://youtu.be/DWES4g06bTw" target="_blank"> video link</a>
-    </div>
   </div>
-
-          
-        
-          
-            
-  <div class="ui raised link card">
-    <div class="ui center aligned content">
-      <div class="right floated meta"><i class="huge film icon"></i></div>
-      <div class="header"> Javascript Arrays</div>
-    </div>
-    <div class="ui segment">
-      <div class="ui embed" data-source="youtube" data-id="oLt1N1dwOOs"></div>
-    </div>
-    <div class="center aligned content">
-      <div class="description">
-        <p>Exploring Arrays in detail, including array methods, iteration and simple arrays of objects.</p>
-
-      </div>
-    </div>
-    <div class="extra content center aligned">
-      <a href="https://youtu.be/oLt1N1dwOOs" target="_blank"> video link</a>
-    </div>
-  </div>
-
-          
-        
-          
-            
-  <div class="ui raised link card">
-    <div class="ui center aligned content">
-      <div class="right floated meta"><i class="huge film icon"></i></div>
-      <div class="header"> Lab Preview</div>
-    </div>
-    <div class="ui segment">
-      <div class="ui embed" data-source="youtube" data-id="n_eZrjTUtkI"></div>
-    </div>
-    <div class="center aligned content">
-      <div class="description">
-        <p>Quick intro to the purpose and structure of the labs.</p>
-
-      </div>
-    </div>
-    <div class="extra content center aligned">
-      <a href="https://youtu.be/n_eZrjTUtkI" target="_blank"> video link</a>
-    </div>
-  </div>
-
-          
-        
-      </div>
-    </section>
-  
-
-         
-         
-  
-    <section class="ui attached segment">
-      <a class="ui right ribbon label">talks</a>
-      <div class="ui centered four doubling stackable cards">
-        
-          
-            
-
-  <div class="ui raised link card">
-
-    <div class="center aligned content">
-      <div class="right floated meta"><i class="huge object group icon"></i></div>
-      <div class="header"> JS Introduction</div>
-    </div>
 
     
-    <a class="ui raised link card" href="talk-a-js-background/js-background.pdf" target="_blank">
+  <div class="uk-padding">
     
-      <div class="image">
-        <img class="ui bordered rounded image" src="talk-a-js-background/js-background.png">
-      </div>
+      
+  <li>
+    <a href="../index.html"
+       title="To the top level Topics for this Module" pos="bottom" uk-tooltip>
+      <i class="fas fa-home fa-4x"></i>
     </a>
+  </li>
 
-
-    <div class="center aligned content">
-      <div class="description">
-        <p>Place javascript in its proper context, and explore its relationship to the browser.</p>
-
-      </div>
-    </div>
       
-
-    
-
   </div>
 
-
-
-          
-        
-          
-            
-
-  <div class="ui raised link card">
-
-    <div class="center aligned content">
-      <div class="right floated meta"><i class="huge object group icon"></i></div>
-      <div class="header"> Variables</div>
-    </div>
-
     
-    <a class="ui raised link card" href="talk-b-js-varialbes/js-variables.pdf" target="_blank">
-    
-      <div class="image">
-        <img class="ui bordered rounded image" src="talk-b-js-varialbes/js-variables.jpg">
-      </div>
-    </a>
-
-
-    <div class="center aligned content">
-      <div class="description">
-        <p>Explore the javascript variables, including the basic types, conversion and usage</p>
-
-      </div>
-    </div>
-      
-
-    
-
-  </div>
-
-
-
-          
-        
-          
-            
-
-  <div class="ui raised link card">
-
-    <div class="center aligned content">
-      <div class="right floated meta"><i class="huge object group icon"></i></div>
-      <div class="header"> Boolean Logic</div>
-    </div>
-
-    
-    <a class="ui raised link card" href="talk-c-js-boolean-logic/js-boolean-logic.pdf" target="_blank">
-    
-      <div class="image">
-        <img class="ui bordered rounded image" src="talk-c-js-boolean-logic/js-boolean-logic.jpg">
-      </div>
-    </a>
-
-
-    <div class="center aligned content">
-      <div class="description">
-        <p>Boolean expressions, operators and selection statements</p>
-
-      </div>
-    </div>
-      
-
-    
-
-  </div>
-
-
-
-          
-        
-          
-            
-
-  <div class="ui raised link card">
-
-    <div class="center aligned content">
-      <div class="right floated meta"><i class="huge object group icon"></i></div>
-      <div class="header"> Const, Let & Objects</div>
-    </div>
-
-    
-    <a class="ui raised link card" href="talk-d-js-variables-&-objects/js-variables-&-objects.pdf" target="_blank">
-    
-      <div class="image">
-        <img class="ui bordered rounded image" src="talk-d-js-variables-&-objects/js-variables-&-objects.png">
-      </div>
-    </a>
-
-
-    <div class="center aligned content">
-      <div class="description">
-        <p>Using const &amp; let. Declaring and using objects.</p>
-
-      </div>
-    </div>
-      
-
-    
-
-  </div>
-
-
-
-          
-        
-          
-            
-
-  <div class="ui raised link card">
-
-    <div class="center aligned content">
-      <div class="right floated meta"><i class="huge object group icon"></i></div>
-      <div class="header"> Arrays: Basics</div>
-    </div>
-
-    
-    <a class="ui raised link card" href="talk-f-arrays-basics/arrays-basics.pdf" target="_blank">
-    
-      <div class="image">
-        <img class="ui bordered rounded image" src="talk-f-arrays-basics/arrays-basics.png">
-      </div>
-    </a>
-
-
-    <div class="center aligned content">
-      <div class="description">
-        <p>Creating, accessing, adding to and removing from arrays.</p>
-
-      </div>
-    </div>
-      
-
-    
-
-  </div>
-
-
-
-          
-        
-          
-            
-
-  <div class="ui raised link card">
-
-    <div class="center aligned content">
-      <div class="right floated meta"><i class="huge object group icon"></i></div>
-      <div class="header"> Array Methods</div>
-    </div>
-
-    
-    <a class="ui raised link card" href="talk-g-array-methods/array-methods.pdf" target="_blank">
-    
-      <div class="image">
-        <img class="ui bordered rounded image" src="talk-g-array-methods/array-methods.png">
-      </div>
-    </a>
-
-
-    <div class="center aligned content">
-      <div class="description">
-        <p>Exploring length, slice, concat, join, indexOf, lastIndexOf</p>
-
-      </div>
-    </div>
-      
-
-    
-
-  </div>
-
-
-
-          
-        
-          
-            
-
-  <div class="ui raised link card">
-
-    <div class="center aligned content">
-      <div class="right floated meta"><i class="huge object group icon"></i></div>
-      <div class="header"> Array Iteration</div>
-    </div>
-
-    
-    <a class="ui raised link card" href="talk-h-array-iteration/array-iteration.pdf" target="_blank">
-    
-      <div class="image">
-        <img class="ui bordered rounded image" src="talk-h-array-iteration/array-iteration.jpeg">
-      </div>
-    </a>
-
-
-    <div class="center aligned content">
-      <div class="description">
-        <p>Using for, while and do-while to iterate over an array</p>
-
-      </div>
-    </div>
-      
-
-    
-
-  </div>
-
-
-
-          
-        
-          
-            
-
-  <div class="ui raised link card">
-
-    <div class="center aligned content">
-      <div class="right floated meta"><i class="huge object group icon"></i></div>
-      <div class="header"> Arrays of Strings</div>
-    </div>
-
-    
-    <a class="ui raised link card" href="talk-i-arrays-of-strings/arrays-of-strings.pdf" target="_blank">
-    
-      <div class="image">
-        <img class="ui bordered rounded image" src="talk-i-arrays-of-strings/arrays-of-strings.png">
-      </div>
-    </a>
-
-
-    <div class="center aligned content">
-      <div class="description">
-        <p>A review of the structure of arrays of Strings</p>
-
-      </div>
-    </div>
-      
-
-    
-
-  </div>
-
-
-
-          
-        
-          
-            
-
-  <div class="ui raised link card">
-
-    <div class="center aligned content">
-      <div class="right floated meta"><i class="huge object group icon"></i></div>
-      <div class="header"> Arrays of Objects</div>
-    </div>
-
-    
-    <a class="ui raised link card" href="talk-j-arrays-of-objects/arrays-of-objects.pdf" target="_blank">
-    
-      <div class="image">
-        <img class="ui bordered rounded image" src="talk-j-arrays-of-objects/arrays-of-objects.png">
-      </div>
-    </a>
-
-
-    <div class="center aligned content">
-      <div class="description">
-        <p>Arrays of more complex data structures, including nested objects.</p>
-
-      </div>
-    </div>
-      
-
-    
-
-  </div>
-
-
-
-          
-        
-          
-            
-
-  <div class="ui raised link card">
-
-    <div class="center aligned content">
-      <div class="right floated meta"><i class="huge object group icon"></i></div>
-      <div class="header"> ES Next</div>
-    </div>
-
-    
-    <a class="ui raised link card" href="talk-k-es-next/es-next.pdf" target="_blank">
-    
-      <div class="image">
-        <img class="ui bordered rounded image" src="talk-k-es-next/es-next.jpg">
-      </div>
-    </a>
-
-
-    <div class="center aligned content">
-      <div class="description">
-        <p>A brief tour of recent additions to the Javascript Language</p>
-
-      </div>
-    </div>
-      
-
-    
-
-  </div>
-
-
-
-          
-        
-      </div>
-    </section>
   
 
-         
-         
+    
   
-    <section class="ui attached segment">
-      <a class="ui right ribbon label">labs</a>
-      <div class="ui centered four doubling stackable cards">
+    <div class="uk-card uk-card-default uk-padding-small">
+      <ul class="uk-iconnav">
+        
         
           
-            
-
-  <div class="ui raised link card">
-
-    <div class="center aligned content">
-      <div class="right floated meta"><i class="huge lab icon"></i></div>
-      <div class="header"> Lab-2.1 JS Intro</div>
-    </div>
-
+  
     
-    <a class="ui raised link card" href="book-1-javascript-intro/index.html">
-    
-      <div class="image">
-        <img class="ui bordered rounded image" src="book-1-javascript-intro/img/main.png">
-      </div>
-    </a>
-
-
-    <div class="center aligned content">
-      <div class="description">
-        <p>Introducing the fundamentals of the javascript language, becoming familiar with some of the different sources of a selection of javascript resources. Explore Google Chrome&#39;s javascript-based tools. Understand basic types. Acquire an understanding of the roles that arrays and objects play in a javascript program. All using JetBrains&#39; WebStorm IDE.</p>
-
-      </div>
-    </div>
       
-
-    
-
-  </div>
-
-
-
-          
-        
-          
-            
-
-  <div class="ui raised link card">
-
-    <div class="center aligned content">
-      <div class="right floated meta"><i class="huge lab icon"></i></div>
-      <div class="header"> Lab-2.2 JS Basics</div>
-    </div>
-
-    
-    <a class="ui raised link card" href="book-2-javascript-fundamentals/index.html">
-    
-      <div class="image">
-        <img class="ui bordered rounded image" src="book-2-javascript-fundamentals/img/main.png">
-      </div>
-    </a>
-
-
-    <div class="center aligned content">
-      <div class="description">
-        <p>Examine some of JavaScript&#39;s constructs such as conditionals, loops, arrays, objects, functions and scope. Understanding some concepts such as Truthy and Falsy values. simple static web site, include an external JavaScript file and use Google Chrome developer tools to debug into the script at runtime.</p>
-
-      </div>
-    </div>
       
+  <li>
+    <a href="../talkwall.html"
+       title="All slides's in module" pos="bottom" uk-tooltip>
+      <i class="fas fa-object-group   fa-2x" style="color:#009688""></i>
+    </a>
+  </li>
 
     
+  
+    
+      
+      
+  <li>
+    <a href="../labwall.html"
+       title="All labs's in module" pos="bottom" uk-tooltip>
+      <i class="fas fa-flask          fa-2x" style="color:#00BCD4""></i>
+    </a>
+  </li>
+
+    
+  
+    
+      
+      
+  <li>
+    <a href="../videowall.html"
+       title="All undefined's in module" pos="bottom" uk-tooltip>
+      <i class=""></i>
+    </a>
+  </li>
+
+    
+  
+    
+  
+    
+  
+    
+  
+
+        
+      </ul>
+    </div>
+  
 
   </div>
 
-
-
-          
+  
+  <div class="uk-container uk-padding-small">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    <div class="uk-child-width-1-4@s uk-flex uk-flex-center" uk-grid uk-height-match="target: > div > .uk-card">
+      
         
+          <div>
+            
+              
+  <div class="uk-card uk-card-default 
+  
+    uk-card-hover
+  
+ uk-card-small uk-text-center uk-animation-scale-up">
+    
+  
+    
+      
+    
+    <a href=.//talk-a-js-background/js-background.pdf target="_blank">
+  
+
+    
+  <div class="uk-card-header">
+    <div uk-grid>
+      <div class="uk-width-expand@m">
+        <h3> JS Introduction </h3>
       </div>
-    </section>
-  
-
-         
-         
-  
-
-         
-         
-  
-
-         
-         
-  
-
-         
+      <div class="uk-width-1-4@m">
+        <i class=" fas fa-object-group   fa-2x" style="color:#009688" > </i>
       </div>
     </div>
   </div>
 
+    
+  
 
-    <footer>
+    
+  <div class="uk-card-body">
+    
+      <img src="./talk-a-js-background/js-background.png">
+    
+  </div>
 
-    </footer>
-    <script>
-      $(document).ready(function() {
-  $('img').addClass('ui image');
+    
+  
+    </a>
+  
 
-  $('.ui.embed').embed();
+    
+  
+    <div class="uk-card-footer">
+      <p> <p>Place javascript in its proper context, and explore its relationship to the browser.</p>
+</p>
+    </div>
+  
 
-  const $images = $('.lab img');
-  jQuery.each($images, function(i) {
-    if ($images[i].alt.length > 0) {
-      const divImg = $(document.createElement('div')).addClass(
-        'ui basic segment',
-      );
-      $($images[i]).wrap(divImg);
-      const divLabel = $(document.createElement('div')).addClass(
-        'ui blue ribbon label',
-      );
-      divLabel.append($images[i].alt);
-      $(divLabel).insertBefore($images[i]);
-    }
-  });
+    
+  
 
-  $('.ui.menu .item').tab({
-    history: true,
-    historyType: 'hash',
-  });
+  </div>
 
-  $('.popup').popup();
+            
+          </div>
+        
+      
+        
+          <div>
+            
+              
+  <div class="uk-card uk-card-default 
+  
+    uk-card-hover
+  
+ uk-card-small uk-text-center uk-animation-scale-up">
+    
+  
+    
+      
+    
+    <a href=.//talk-b-js-varialbes/js-variables.pdf target="_blank">
+  
 
-  $('.ui.sidebar')
-    .sidebar({ context: $('.pushable') })
-    .sidebar('setting', 'transition', 'slide out')
-    .sidebar('attach events', '#toc');
-});
+    
+  <div class="uk-card-header">
+    <div uk-grid>
+      <div class="uk-width-expand@m">
+        <h3> Variables </h3>
+      </div>
+      <div class="uk-width-1-4@m">
+        <i class=" fas fa-object-group   fa-2x" style="color:#009688" > </i>
+      </div>
+    </div>
+  </div>
 
-    </script>
+    
+  
+
+    
+  <div class="uk-card-body">
+    
+      <img src="./talk-b-js-varialbes/js-variables.jpg">
+    
+  </div>
+
+    
+  
+    </a>
+  
+
+    
+  
+    <div class="uk-card-footer">
+      <p> <p>Explore the javascript variables, including the basic types, conversion and usage</p>
+</p>
+    </div>
+  
+
+    
+  
+
+  </div>
+
+            
+          </div>
+        
+      
+        
+          <div>
+            
+              
+  <div class="uk-card uk-card-default 
+  
+    uk-card-hover
+  
+ uk-card-small uk-text-center uk-animation-scale-up">
+    
+  
+    
+      
+    
+    <a href=.//talk-c-js-boolean-logic/js-boolean-logic.pdf target="_blank">
+  
+
+    
+  <div class="uk-card-header">
+    <div uk-grid>
+      <div class="uk-width-expand@m">
+        <h3> Boolean Logic </h3>
+      </div>
+      <div class="uk-width-1-4@m">
+        <i class=" fas fa-object-group   fa-2x" style="color:#009688" > </i>
+      </div>
+    </div>
+  </div>
+
+    
+  
+
+    
+  <div class="uk-card-body">
+    
+      <img src="./talk-c-js-boolean-logic/js-boolean-logic.jpg">
+    
+  </div>
+
+    
+  
+    </a>
+  
+
+    
+  
+    <div class="uk-card-footer">
+      <p> <p>Boolean expressions, operators and selection statements</p>
+</p>
+    </div>
+  
+
+    
+  
+
+  </div>
+
+            
+          </div>
+        
+      
+        
+          <div>
+            
+              
+  <div class="uk-card uk-card-default 
+  
+    uk-card-hover
+  
+ uk-card-small uk-text-center uk-animation-scale-up">
+    
+  
+    
+      
+    
+    <a href=.//talk-d-js-variables-&-objects/js-variables-&-objects.pdf target="_blank">
+  
+
+    
+  <div class="uk-card-header">
+    <div uk-grid>
+      <div class="uk-width-expand@m">
+        <h3> Const, Let & Objects </h3>
+      </div>
+      <div class="uk-width-1-4@m">
+        <i class=" fas fa-object-group   fa-2x" style="color:#009688" > </i>
+      </div>
+    </div>
+  </div>
+
+    
+  
+
+    
+  <div class="uk-card-body">
+    
+      <img src="./talk-d-js-variables-&-objects/js-variables-&-objects.png">
+    
+  </div>
+
+    
+  
+    </a>
+  
+
+    
+  
+    <div class="uk-card-footer">
+      <p> <p>Using const &amp; let. Declaring and using objects.</p>
+</p>
+    </div>
+  
+
+    
+  
+
+  </div>
+
+            
+          </div>
+        
+      
+        
+          <div>
+            
+              
+  <div class="uk-card uk-card-default 
+  
+    uk-card-hover
+  
+ uk-card-small uk-text-center uk-animation-scale-up">
+    
+  
+    
+      
+    
+    <a href=.//talk-f-arrays-basics/arrays-basics.pdf target="_blank">
+  
+
+    
+  <div class="uk-card-header">
+    <div uk-grid>
+      <div class="uk-width-expand@m">
+        <h3> Arrays: Basics </h3>
+      </div>
+      <div class="uk-width-1-4@m">
+        <i class=" fas fa-object-group   fa-2x" style="color:#009688" > </i>
+      </div>
+    </div>
+  </div>
+
+    
+  
+
+    
+  <div class="uk-card-body">
+    
+      <img src="./talk-f-arrays-basics/arrays-basics.png">
+    
+  </div>
+
+    
+  
+    </a>
+  
+
+    
+  
+    <div class="uk-card-footer">
+      <p> <p>Creating, accessing, adding to and removing from arrays.</p>
+</p>
+    </div>
+  
+
+    
+  
+
+  </div>
+
+            
+          </div>
+        
+      
+        
+          <div>
+            
+              
+  <div class="uk-card uk-card-default 
+  
+    uk-card-hover
+  
+ uk-card-small uk-text-center uk-animation-scale-up">
+    
+  
+    
+      
+    
+    <a href=.//talk-g-array-methods/array-methods.pdf target="_blank">
+  
+
+    
+  <div class="uk-card-header">
+    <div uk-grid>
+      <div class="uk-width-expand@m">
+        <h3> Array Methods </h3>
+      </div>
+      <div class="uk-width-1-4@m">
+        <i class=" fas fa-object-group   fa-2x" style="color:#009688" > </i>
+      </div>
+    </div>
+  </div>
+
+    
+  
+
+    
+  <div class="uk-card-body">
+    
+      <img src="./talk-g-array-methods/array-methods.png">
+    
+  </div>
+
+    
+  
+    </a>
+  
+
+    
+  
+    <div class="uk-card-footer">
+      <p> <p>Exploring length, slice, concat, join, indexOf, lastIndexOf</p>
+</p>
+    </div>
+  
+
+    
+  
+
+  </div>
+
+            
+          </div>
+        
+      
+        
+          <div>
+            
+              
+  <div class="uk-card uk-card-default 
+  
+    uk-card-hover
+  
+ uk-card-small uk-text-center uk-animation-scale-up">
+    
+  
+    
+      
+    
+    <a href=.//talk-h-array-iteration/array-iteration.pdf target="_blank">
+  
+
+    
+  <div class="uk-card-header">
+    <div uk-grid>
+      <div class="uk-width-expand@m">
+        <h3> Array Iteration </h3>
+      </div>
+      <div class="uk-width-1-4@m">
+        <i class=" fas fa-object-group   fa-2x" style="color:#009688" > </i>
+      </div>
+    </div>
+  </div>
+
+    
+  
+
+    
+  <div class="uk-card-body">
+    
+      <img src="./talk-h-array-iteration/array-iteration.jpeg">
+    
+  </div>
+
+    
+  
+    </a>
+  
+
+    
+  
+    <div class="uk-card-footer">
+      <p> <p>Using for, while and do-while to iterate over an array</p>
+</p>
+    </div>
+  
+
+    
+  
+
+  </div>
+
+            
+          </div>
+        
+      
+        
+          <div>
+            
+              
+  <div class="uk-card uk-card-default 
+  
+    uk-card-hover
+  
+ uk-card-small uk-text-center uk-animation-scale-up">
+    
+  
+    
+      
+    
+    <a href=.//talk-i-arrays-of-strings/arrays-of-strings.pdf target="_blank">
+  
+
+    
+  <div class="uk-card-header">
+    <div uk-grid>
+      <div class="uk-width-expand@m">
+        <h3> Arrays of Strings </h3>
+      </div>
+      <div class="uk-width-1-4@m">
+        <i class=" fas fa-object-group   fa-2x" style="color:#009688" > </i>
+      </div>
+    </div>
+  </div>
+
+    
+  
+
+    
+  <div class="uk-card-body">
+    
+      <img src="./talk-i-arrays-of-strings/arrays-of-strings.png">
+    
+  </div>
+
+    
+  
+    </a>
+  
+
+    
+  
+    <div class="uk-card-footer">
+      <p> <p>A review of the structure of arrays of Strings</p>
+</p>
+    </div>
+  
+
+    
+  
+
+  </div>
+
+            
+          </div>
+        
+      
+        
+          <div>
+            
+              
+  <div class="uk-card uk-card-default 
+  
+    uk-card-hover
+  
+ uk-card-small uk-text-center uk-animation-scale-up">
+    
+  
+    
+      
+    
+    <a href=.//talk-j-arrays-of-objects/arrays-of-objects.pdf target="_blank">
+  
+
+    
+  <div class="uk-card-header">
+    <div uk-grid>
+      <div class="uk-width-expand@m">
+        <h3> Arrays of Objects </h3>
+      </div>
+      <div class="uk-width-1-4@m">
+        <i class=" fas fa-object-group   fa-2x" style="color:#009688" > </i>
+      </div>
+    </div>
+  </div>
+
+    
+  
+
+    
+  <div class="uk-card-body">
+    
+      <img src="./talk-j-arrays-of-objects/arrays-of-objects.png">
+    
+  </div>
+
+    
+  
+    </a>
+  
+
+    
+  
+    <div class="uk-card-footer">
+      <p> <p>Arrays of more complex data structures, including nested objects.</p>
+</p>
+    </div>
+  
+
+    
+  
+
+  </div>
+
+            
+          </div>
+        
+      
+        
+          <div>
+            
+              
+  <div class="uk-card uk-card-default 
+  
+    uk-card-hover
+  
+ uk-card-small uk-text-center uk-animation-scale-up">
+    
+  
+    
+      
+    
+    <a href=.//talk-k-es-next/es-next.pdf target="_blank">
+  
+
+    
+  <div class="uk-card-header">
+    <div uk-grid>
+      <div class="uk-width-expand@m">
+        <h3> ES Next </h3>
+      </div>
+      <div class="uk-width-1-4@m">
+        <i class=" fas fa-object-group   fa-2x" style="color:#009688" > </i>
+      </div>
+    </div>
+  </div>
+
+    
+  
+
+    
+  <div class="uk-card-body">
+    
+      <img src="./talk-k-es-next/es-next.jpg">
+    
+  </div>
+
+    
+  
+    </a>
+  
+
+    
+  
+    <div class="uk-card-footer">
+      <p> <p>A brief tour of recent additions to the Javascript Language</p>
+</p>
+    </div>
+  
+
+    
+  
+
+  </div>
+
+            
+          </div>
+        
+      
+        
+          <div>
+            
+              
+  <div class="uk-card uk-card-default 
+  
+    uk-card-hover
+  
+ uk-card-small uk-text-center uk-animation-scale-up">
+    
+  
+    
+      
+      
+    
+    <a href=./book-1-javascript-intro/index.html>
+  
+
+    
+  <div class="uk-card-header">
+    <div uk-grid>
+      <div class="uk-width-expand@m">
+        <h3> Lab-2.1 JS Intro</h3>
+      </div>
+      <div class="uk-width-1-4@m">
+        <i class=" fas fa-flask          fa-2x" style="color:#00BCD4" > </i>
+      </div>
+    </div>
+  </div>
+
+    
+  
+
+    
+  <div class="uk-card-body">
+    
+      <img src="./book-1-javascript-intro/img/main.png">
+    
+  </div>
+
+    
+  
+    </a>
+  
+
+    
+  
+    <div class="uk-card-footer">
+      <p> <p>Introducing the fundamentals of the javascript language, becoming familiar with some of the different sources of a selection of javascript resources. Explore Google Chrome&#39;s javascript-based tools. Understand basic types. Acquire an understanding of the roles that arrays and objects play in a javascript program. All using JetBrains&#39; WebStorm IDE.</p>
+</p>
+    </div>
+  
+
+    
+  
+
+  </div>
+
+            
+          </div>
+        
+      
+        
+          <div>
+            
+              
+  <div class="uk-card uk-card-default 
+  
+    uk-card-hover
+  
+ uk-card-small uk-text-center uk-animation-scale-up">
+    
+  
+    
+      
+      
+    
+    <a href=./book-2-javascript-fundamentals/index.html>
+  
+
+    
+  <div class="uk-card-header">
+    <div uk-grid>
+      <div class="uk-width-expand@m">
+        <h3> Lab-2.2 JS Basics</h3>
+      </div>
+      <div class="uk-width-1-4@m">
+        <i class=" fas fa-flask          fa-2x" style="color:#00BCD4" > </i>
+      </div>
+    </div>
+  </div>
+
+    
+  
+
+    
+  <div class="uk-card-body">
+    
+      <img src="./book-2-javascript-fundamentals/img/main.png">
+    
+  </div>
+
+    
+  
+    </a>
+  
+
+    
+  
+    <div class="uk-card-footer">
+      <p> <p>Examine some of JavaScript&#39;s constructs such as conditionals, loops, arrays, objects, functions and scope. Understanding some concepts such as Truthy and Falsy values. simple static web site, include an external JavaScript file and use Google Chrome developer tools to debug into the script at runtime.</p>
+</p>
+    </div>
+  
+
+    
+  
+
+  </div>
+
+            
+          </div>
+        
+      
+        
+          <div>
+            
+              
+  <div class="uk-card uk-card-default 
+  
+    uk-card-hover
+  
+ uk-card-small uk-text-center uk-animation-scale-up">
+    
+  
+    
+      
+      
+    
+    <a href=./video-1/DWES4g06bTw>
+  
+
+    
+  <div class="uk-card-header">
+    <div uk-grid>
+      <div class="uk-width-expand@m">
+        <h3> Javascript Basics </h3>
+      </div>
+      <div class="uk-width-1-4@m">
+        <i class="  > </i>
+      </div>
+    </div>
+  </div>
+
+    
+  
+    <div class="uk-card-media">
+      <iframe width="1280" height="720" src="https://www.youtube.com/embed/DWES4g06bTw" allow="autoplay; encrypted-media" allowfullscreen uk-responsive></iframe>
+    </div>
+    <div class="uk-card-footer">
+      <a href="https://youtu.be/DWES4g06bTw" target="_blank"><i class="fas fa-link fa-2x"></i></a>
+    </div>
+  
+
+    
+  <div class="uk-card-body">
+    
+      <i class=""></i>
+    
+  </div>
+
+    
+  
+    </a>
+  
+
+    
+  
+    <div class="uk-card-footer">
+      <p> <p>A brief tour of variables, boolean logic and objects</p>
+</p>
+    </div>
+  
+
+    
+  
+
+  </div>
+
+            
+          </div>
+        
+      
+        
+          <div>
+            
+              
+  <div class="uk-card uk-card-default 
+  
+    uk-card-hover
+  
+ uk-card-small uk-text-center uk-animation-scale-up">
+    
+  
+    
+      
+      
+    
+    <a href=./video-2/oLt1N1dwOOs>
+  
+
+    
+  <div class="uk-card-header">
+    <div uk-grid>
+      <div class="uk-width-expand@m">
+        <h3> Javascript Arrays </h3>
+      </div>
+      <div class="uk-width-1-4@m">
+        <i class="  > </i>
+      </div>
+    </div>
+  </div>
+
+    
+  
+    <div class="uk-card-media">
+      <iframe width="1280" height="720" src="https://www.youtube.com/embed/oLt1N1dwOOs" allow="autoplay; encrypted-media" allowfullscreen uk-responsive></iframe>
+    </div>
+    <div class="uk-card-footer">
+      <a href="https://youtu.be/oLt1N1dwOOs" target="_blank"><i class="fas fa-link fa-2x"></i></a>
+    </div>
+  
+
+    
+  <div class="uk-card-body">
+    
+      <i class=""></i>
+    
+  </div>
+
+    
+  
+    </a>
+  
+
+    
+  
+    <div class="uk-card-footer">
+      <p> <p>Exploring Arrays in detail, including array methods, iteration and simple arrays of objects.</p>
+</p>
+    </div>
+  
+
+    
+  
+
+  </div>
+
+            
+          </div>
+        
+      
+        
+          <div>
+            
+              
+  <div class="uk-card uk-card-default 
+  
+    uk-card-hover
+  
+ uk-card-small uk-text-center uk-animation-scale-up">
+    
+  
+    
+      
+      
+    
+    <a href=./video-3/n_eZrjTUtkI>
+  
+
+    
+  <div class="uk-card-header">
+    <div uk-grid>
+      <div class="uk-width-expand@m">
+        <h3> Lab Preview </h3>
+      </div>
+      <div class="uk-width-1-4@m">
+        <i class="  > </i>
+      </div>
+    </div>
+  </div>
+
+    
+  
+    <div class="uk-card-media">
+      <iframe width="1280" height="720" src="https://www.youtube.com/embed/n_eZrjTUtkI" allow="autoplay; encrypted-media" allowfullscreen uk-responsive></iframe>
+    </div>
+    <div class="uk-card-footer">
+      <a href="https://youtu.be/n_eZrjTUtkI" target="_blank"><i class="fas fa-link fa-2x"></i></a>
+    </div>
+  
+
+    
+  <div class="uk-card-body">
+    
+      <i class=""></i>
+    
+  </div>
+
+    
+  
+    </a>
+  
+
+    
+  
+    <div class="uk-card-footer">
+      <p> <p>Quick intro to the purpose and structure of the labs.</p>
+</p>
+    </div>
+  
+
+    
+  
+
+  </div>
+
+            
+          </div>
+        
+      
+    </div>
+  </div>
+
+
   </body>
-
  </html>

@@ -1,526 +1,587 @@
  <!DOCTYPE html>
  <html>
    <head>
-
      <meta charset="utf-8">
      <meta name="viewport" content="width=device-width, initial-scale=1">
-
-     
-
-     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css" type="text/css">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" rel="stylesheet" />
-
-     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
-     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
-     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.39/css/uikit.min.css" />
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-light.min.css" />
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.39/js/uikit.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.39/js/uikit-icons.min.js"></script>
+     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
      <script>hljs.initHighlightingOnLoad();</script>
-
-     
-
-     <style>
-       
-
-body 
-{
-  font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
-}
-
-figcaption
-{
-  margin-bottom: 20px;
-}
-
-.vertical-align
-{
-  display: flex;
-  align-items: center;
-}
-
-.ui.segment.pushable
-{
-  margin: 0;
-  padding: 1rem 0;
-  overflow: visible;
-}
-
-
-
-     </style>
-
    </head>
-
-  <body>
+  <body class="uk-background-muted">
     
-
   
-  <header class="ui center aligned middle aligned stackable grid segment">
-
+  <div class="uk-background-muted uk-flex uk-flex-center uk-flex-middle uk-text-center uk-padding-small" uk-grid>
     
+  <div class="uk-width-1-2@m  uk-card uk-card-default uk-padding-small">
+    <h2> 1.1: HTML Templates  </h2>
+    <div class="uk-text-muted uk-text-small">
       
-  <a class="ui blue left corner label">
-    <div id="showTOC" class="popup" data-content="Reveal TOC">
-      <i id="toc" class="sitemap big  icon"></i>
-    </div>
-  </a>
-
-    
-
-    <div class="ui three wide column">
-      <h2> 1.1: HTML Templates </h2>
-    </div>
-
-    <div class="ui two wide column">
+        Prepared for <a href="https://www.oth-regensburg.de/"> OTH Regensburg </a> by <a href="https://www.wit.ie/about_wit/contact_us/staff_directory/eamonn_deleastar"> Eamonn de Leastar<a>, <a href="https://www.wit.ie"> WIT</a>
       
-          
-  <div class="two wide column sitemap">
-    <div class="popup" data-content="To the parent topic of this Topic">
-      <a href="../index.html"> <i class="huge reply icon"></i> <br>Parent Topic </a>
     </div>
   </div>
 
-        
-    </div>
-
     
-
+  <div class="uk-padding">
     
-
-    
-
-    
-      <div class="ui three wide column">
-        
-  <div class="four wide column">
-    <div class="ui center aligned mini message segment">
-      Prepared for <a href="https://www.oth-regensburg.de/"> OTH Regensburg </a> by <a href="https://www.wit.ie/about_wit/contact_us/staff_directory/eamonn_deleastar"> Eamonn de Leastar<a>, <a href="https://www.wit.ie"> WIT</a>.
-      <a href="http://creativecommons.org/licenses/by-nc/4.0/"
-         title="External link to http://creativecommons.org/licenses/by-nc/4.0/"
-         target="_blank">Creative Commons License
-      </a>
-    </div>
-  </div>
-
-      </div>
-    
-
-    <div class="three wide column">
       
-    </div>
-
-
-  </header>
-  
-  
-    <script>
-      ((window.gitter = {}).chat = {}).options = {
-        room: 'wit-oth-2017-dmas/Lobby'
-      };
-    </script>
-    <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
-  
-
-
-
-  <div class="ui segment pushable">
-    <div class="ui inverted labeled icon left inline vertical sidebar menu">
-      <div class="header">
-        <a class="item" href="#">
-          
-        </a>
-      </div>
-      <div class="menu">
-        
-          <a class="item" href="talk-0-html/case-study.pdf">
-            Case Study
-          </a>
-        
-          <a class="item" href="talk-1-templates/templates.pdf">
-            Templates
-          </a>
-        
-          <a class="item" href="talk-2-deployment/deployment.pdf">
-            Deployment
-          </a>
-        
-          <a class="item" href="talk-3-harp-and-surge/harp.pdf">
-            Harp & Surge
-          </a>
-        
-          <a class="item" href="book-00-case-study/index.html">
-            Lab-1.1 Case Study
-          </a>
-        
-          <a class="item" href="book-01-harp/index.html">
-            Lab-1.2 Harp & Surge
-          </a>
-        
-          <a class="item" href="book-02-templates/index.html">
-            Lab-1.3 Templating
-          </a>
-        
-      </div>
-    </div>
-    <div class="pusher">
-      <div class="ui basic container segment">
-       
-         
-  
-
-         
-         
-  
-    <section class="ui attached segment">
-      <a class="ui right ribbon label">talks</a>
-      <div class="ui centered four doubling stackable cards">
-        
-          
-            
-
-  <div class="ui raised link card">
-
-    <div class="center aligned content">
-      <div class="right floated meta"><i class="huge object group icon"></i></div>
-      <div class="header"> Case Study</div>
-    </div>
-
-    
-    <a class="ui raised link card" href="talk-0-html/case-study.pdf" target="_blank">
-    
-      <div class="image">
-        <img class="ui bordered rounded image" src="talk-0-html/case-study.png">
-      </div>
+  <li>
+    <a href="../index.html"
+       title="To the top level Topics for this Module" pos="bottom" uk-tooltip>
+      <i class="fas fa-home fa-4x"></i>
     </a>
+  </li>
 
+      
+  </div>
 
-    <div class="center aligned content">
-      <div class="description">
-        <p>A review of the the evolution of a web site from simple unstyled pages to a reasonable simple but appealing layout.</p>
+    
+  
 
+    
+  
+    <div class="uk-card uk-card-default uk-padding-small">
+      <ul class="uk-iconnav">
+        
+        
+          
+  
+    
+      
+      
+  <li>
+    <a href="../talkwall.html"
+       title="All slides's in module" pos="bottom" uk-tooltip>
+      <i class="fas fa-object-group   fa-2x" style="color:#009688""></i>
+    </a>
+  </li>
+
+    
+  
+    
+      
+      
+  <li>
+    <a href="../labwall.html"
+       title="All labs's in module" pos="bottom" uk-tooltip>
+      <i class="fas fa-flask          fa-2x" style="color:#00BCD4""></i>
+    </a>
+  </li>
+
+    
+  
+    
+      
+      
+  <li>
+    <a href="../videowall.html"
+       title="All undefined's in module" pos="bottom" uk-tooltip>
+      <i class=""></i>
+    </a>
+  </li>
+
+    
+  
+    
+  
+    
+  
+    
+  
+
+        
+      </ul>
+    </div>
+  
+
+  </div>
+
+  
+  <div class="uk-container uk-padding-small">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    <div class="uk-child-width-1-4@s uk-flex uk-flex-center" uk-grid uk-height-match="target: > div > .uk-card">
+      
+        
+          <div>
+            
+              
+  <div class="uk-card uk-card-default 
+  
+    uk-card-hover
+  
+ uk-card-small uk-text-center uk-animation-scale-up">
+    
+  
+    
+      
+    
+    <a href=.//talk-0-html/case-study.pdf target="_blank">
+  
+
+    
+  <div class="uk-card-header">
+    <div uk-grid>
+      <div class="uk-width-expand@m">
+        <h3> Case Study </h3>
+      </div>
+      <div class="uk-width-1-4@m">
+        <i class=" fas fa-object-group   fa-2x" style="color:#009688" > </i>
       </div>
     </div>
-      
-        <div class="extra content center aligned">
-          <div class="ui segment">
-            <div class="ui embed" data-source="youtube" data-id="jDfu08qtDQ0"></div>
+  </div>
+
+    
+  
+    <div class="uk-card-media">
+      <iframe width="1280" height="720" src="https://www.youtube.com/embed/jDfu08qtDQ0" allow="autoplay; encrypted-media" allowfullscreen uk-responsive></iframe>
+    </div>
+    <div class="uk-card-footer">
+      <a href="https://youtu.be/jDfu08qtDQ0" target="_blank"><i class="fas fa-link fa-2x"></i></a>
+    </div>
+  
+
+    
+  <div class="uk-card-body">
+    
+      <img src="./talk-0-html/case-study.png">
+    
+  </div>
+
+    
+  
+    </a>
+  
+
+    
+  
+    <div class="uk-card-footer">
+      <p> <p>A review of the the evolution of a web site from simple unstyled pages to a reasonable simple but appealing layout.</p>
+</p>
+    </div>
+  
+
+    
+  
+
+  </div>
+
+            
           </div>
-          <a href="https://youtu.be/jDfu08qtDQ0" target="_blank"> video link</a>
-        </div>
+        
       
+        
+          <div>
+            
+              
+  <div class="uk-card uk-card-default 
+  
+    uk-card-hover
+  
+ uk-card-small uk-text-center uk-animation-scale-up">
+    
+  
+    
+      
+    
+    <a href=.//talk-1-templates/templates.pdf target="_blank">
+  
 
     
+  <div class="uk-card-header">
+    <div uk-grid>
+      <div class="uk-width-expand@m">
+        <h3> Templates </h3>
+      </div>
+      <div class="uk-width-1-4@m">
+        <i class=" fas fa-object-group   fa-2x" style="color:#009688" > </i>
+      </div>
+    </div>
+  </div>
+
+    
+  
+    <div class="uk-card-media">
+      <iframe width="1280" height="720" src="https://www.youtube.com/embed/mtsuu72Ajrs" allow="autoplay; encrypted-media" allowfullscreen uk-responsive></iframe>
+    </div>
+    <div class="uk-card-footer">
+      <a href="https://youtu.be/mtsuu72Ajrs" target="_blank"><i class="fas fa-link fa-2x"></i></a>
+    </div>
+  
+
+    
+  <div class="uk-card-body">
+    
+      <img src="./talk-1-templates/templates.png">
+    
+  </div>
+
+    
+  
+    </a>
+  
+
+    
+  
+    <div class="uk-card-footer">
+      <p> <p>The EJS template system implements mechanisms for assembling sites from templates - which are called &#39;partials&#39; in EJS. Additionally, there is a complimentary &#39;layout&#39; mechanism for reusing entire page structures.</p>
+</p>
+    </div>
+  
+
+    
+  
 
   </div>
 
-
-
-          
-        
-          
             
-
-  <div class="ui raised link card">
-
-    <div class="center aligned content">
-      <div class="right floated meta"><i class="huge object group icon"></i></div>
-      <div class="header"> Templates</div>
-    </div>
-
-    
-    <a class="ui raised link card" href="talk-1-templates/templates.pdf" target="_blank">
-    
-      <div class="image">
-        <img class="ui bordered rounded image" src="talk-1-templates/templates.png">
-      </div>
-    </a>
-
-
-    <div class="center aligned content">
-      <div class="description">
-        <p>The EJS template system implements mechanisms for assembling sites from templates - which are called &#39;partials&#39; in EJS. Additionally, there is a complimentary &#39;layout&#39; mechanism for reusing entire page structures.</p>
-
-      </div>
-    </div>
-      
-        <div class="extra content center aligned">
-          <div class="ui segment">
-            <div class="ui embed" data-source="youtube" data-id="mtsuu72Ajrs"></div>
           </div>
-          <a href="https://youtu.be/mtsuu72Ajrs" target="_blank"> video link</a>
-        </div>
+        
       
+        
+          <div>
+            
+              
+  <div class="uk-card uk-card-default 
+  
+    uk-card-hover
+  
+ uk-card-small uk-text-center uk-animation-scale-up">
+    
+  
+    
+      
+    
+    <a href=.//talk-2-deployment/deployment.pdf target="_blank">
+  
 
     
+  <div class="uk-card-header">
+    <div uk-grid>
+      <div class="uk-width-expand@m">
+        <h3> Deployment </h3>
+      </div>
+      <div class="uk-width-1-4@m">
+        <i class=" fas fa-object-group   fa-2x" style="color:#009688" > </i>
+      </div>
+    </div>
+  </div>
+
+    
+  
+    <div class="uk-card-media">
+      <iframe width="1280" height="720" src="https://www.youtube.com/embed/HOYGuWPIr4w" allow="autoplay; encrypted-media" allowfullscreen uk-responsive></iframe>
+    </div>
+    <div class="uk-card-footer">
+      <a href="https://youtu.be/HOYGuWPIr4w" target="_blank"><i class="fas fa-link fa-2x"></i></a>
+    </div>
+  
+
+    
+  <div class="uk-card-body">
+    
+      <img src="./talk-2-deployment/deployment.png">
+    
+  </div>
+
+    
+  
+    </a>
+  
+
+    
+  
+    <div class="uk-card-footer">
+      <p> <p>Deploying a site involves understanding a little more about Clients &amp; Servers, Hosting Providers, Domain Names, Transferring the Sites Files, HTTP and Absolute &amp; Relative Paths</p>
+</p>
+    </div>
+  
+
+    
+  
 
   </div>
 
-
-
-          
-        
-          
             
-
-  <div class="ui raised link card">
-
-    <div class="center aligned content">
-      <div class="right floated meta"><i class="huge object group icon"></i></div>
-      <div class="header"> Deployment</div>
-    </div>
-
-    
-    <a class="ui raised link card" href="talk-2-deployment/deployment.pdf" target="_blank">
-    
-      <div class="image">
-        <img class="ui bordered rounded image" src="talk-2-deployment/deployment.png">
-      </div>
-    </a>
-
-
-    <div class="center aligned content">
-      <div class="description">
-        <p>Deploying a site involves understanding a little more about Clients &amp; Servers, Hosting Providers, Domain Names, Transferring the Sites Files, HTTP and Absolute &amp; Relative Paths</p>
-
-      </div>
-    </div>
-      
-        <div class="extra content center aligned">
-          <div class="ui segment">
-            <div class="ui embed" data-source="youtube" data-id="HOYGuWPIr4w"></div>
           </div>
-          <a href="https://youtu.be/HOYGuWPIr4w" target="_blank"> video link</a>
-        </div>
+        
       
+        
+          <div>
+            
+              
+  <div class="uk-card uk-card-default 
+  
+    uk-card-hover
+  
+ uk-card-small uk-text-center uk-animation-scale-up">
+    
+  
+    
+      
+    
+    <a href=.//talk-3-harp-and-surge/harp.pdf target="_blank">
+  
 
     
+  <div class="uk-card-header">
+    <div uk-grid>
+      <div class="uk-width-expand@m">
+        <h3> Harp & Surge </h3>
+      </div>
+      <div class="uk-width-1-4@m">
+        <i class=" fas fa-object-group   fa-2x" style="color:#009688" > </i>
+      </div>
+    </div>
+  </div>
+
+    
+  
+    <div class="uk-card-media">
+      <iframe width="1280" height="720" src="https://www.youtube.com/embed/PFL_1jhEJrM" allow="autoplay; encrypted-media" allowfullscreen uk-responsive></iframe>
+    </div>
+    <div class="uk-card-footer">
+      <a href="https://youtu.be/PFL_1jhEJrM" target="_blank"><i class="fas fa-link fa-2x"></i></a>
+    </div>
+  
+
+    
+  <div class="uk-card-body">
+    
+      <img src="./talk-3-harp-and-surge/harp.png">
+    
+  </div>
+
+    
+  
+    </a>
+  
+
+    
+  
+    <div class="uk-card-footer">
+      <p> <p>Harp.js and Surge.sh are the two services we will use to server the page locally, and also to deploy it to a public web server.</p>
+</p>
+    </div>
+  
+
+    
+  
 
   </div>
 
-
-
-          
-        
-          
             
-
-  <div class="ui raised link card">
-
-    <div class="center aligned content">
-      <div class="right floated meta"><i class="huge object group icon"></i></div>
-      <div class="header"> Harp & Surge</div>
-    </div>
-
-    
-    <a class="ui raised link card" href="talk-3-harp-and-surge/harp.pdf" target="_blank">
-    
-      <div class="image">
-        <img class="ui bordered rounded image" src="talk-3-harp-and-surge/harp.png">
-      </div>
-    </a>
-
-
-    <div class="center aligned content">
-      <div class="description">
-        <p>Harp.js and Surge.sh are the two services we will use to server the page locally, and also to deploy it to a public web server.</p>
-
-      </div>
-    </div>
-      
-        <div class="extra content center aligned">
-          <div class="ui segment">
-            <div class="ui embed" data-source="youtube" data-id="PFL_1jhEJrM"></div>
           </div>
-          <a href="https://youtu.be/PFL_1jhEJrM" target="_blank"> video link</a>
-        </div>
+        
       
-
-    
-
-  </div>
-
-
-
-          
         
-      </div>
-    </section>
-  
-
-         
-         
-  
-    <section class="ui attached segment">
-      <a class="ui right ribbon label">labs</a>
-      <div class="ui centered four doubling stackable cards">
-        
-          
+          <div>
             
-
-  <div class="ui raised link card">
-
-    <div class="center aligned content">
-      <div class="right floated meta"><i class="huge lab icon"></i></div>
-      <div class="header"> Lab-1.1 Case Study</div>
-    </div>
-
+              
+  <div class="uk-card uk-card-default 
+  
+    uk-card-hover
+  
+ uk-card-small uk-text-center uk-animation-scale-up">
     
-    <a class="ui raised link card" href="book-00-case-study/index.html">
+  
     
-      <div class="image">
-        <img class="ui bordered rounded image" src="book-00-case-study/img/main.png">
-      </div>
-    </a>
-
-
-    <div class="center aligned content">
-      <div class="description">
-        <p>In the lab the web is evolved from unstyled content to a reasonably elegant and clean design. The site employs basic CSS formatting.</p>
-
-      </div>
-    </div>
       
+      
+    
+    <a href=./book-00-case-study/index.html>
+  
 
     
+  <div class="uk-card-header">
+    <div uk-grid>
+      <div class="uk-width-expand@m">
+        <h3> Lab-1.1 Case Study</h3>
+      </div>
+      <div class="uk-width-1-4@m">
+        <i class=" fas fa-flask          fa-2x" style="color:#00BCD4" > </i>
+      </div>
+    </div>
+  </div>
+
+    
+  
+
+    
+  <div class="uk-card-body">
+    
+      <img src="./book-00-case-study/img/main.png">
+    
+  </div>
+
+    
+  
+    </a>
+  
+
+    
+  
+    <div class="uk-card-footer">
+      <p> <p>In the lab the web is evolved from unstyled content to a reasonably elegant and clean design. The site employs basic CSS formatting.</p>
+</p>
+    </div>
+  
+
+    
+  
 
   </div>
 
-
-
-          
-        
-          
             
-
-  <div class="ui raised link card">
-
-    <div class="center aligned content">
-      <div class="right floated meta"><i class="huge lab icon"></i></div>
-      <div class="header"> Lab-1.2 Harp & Surge</div>
-    </div>
-
-    
-    <a class="ui raised link card" href="book-01-harp/index.html">
-    
-      <div class="image">
-        <img class="ui bordered rounded image" src="book-01-harp/img/main.png">
-      </div>
-    </a>
-
-
-    <div class="center aligned content">
-      <div class="description">
-        <p>Install software tools to serve a web site locally and also to deploy the web site to a public web server.</p>
-
-      </div>
-    </div>
-      
-
-    
-
-  </div>
-
-
-
-          
+          </div>
         
-          
+      
+        
+          <div>
             
-
-  <div class="ui raised link card">
-
-    <div class="center aligned content">
-      <div class="right floated meta"><i class="huge lab icon"></i></div>
-      <div class="header"> Lab-1.3 Templating</div>
-    </div>
-
+              
+  <div class="uk-card uk-card-default 
+  
+    uk-card-hover
+  
+ uk-card-small uk-text-center uk-animation-scale-up">
     
-    <a class="ui raised link card" href="book-02-templates/index.html">
+  
     
-      <div class="image">
-        <img class="ui bordered rounded image" src="book-02-templates/img/main.png">
-      </div>
-    </a>
-
-
-    <div class="center aligned content">
-      <div class="description">
-        <p>Rebuild the IoT web site from the case study lab, using templating. This version of the site will aim to significantly reduce the content the author has to manage by reusing &#39;templates&#39; containing common sections.</p>
-
-      </div>
-    </div>
       
+      
+    
+    <a href=./book-01-harp/index.html>
+  
 
     
-
-  </div>
-
-
-
-          
-        
+  <div class="uk-card-header">
+    <div uk-grid>
+      <div class="uk-width-expand@m">
+        <h3> Lab-1.2 Harp & Surge</h3>
       </div>
-    </section>
-  
-
-         
-         
-  
-
-         
-         
-  
-
-         
-         
-  
-
-         
+      <div class="uk-width-1-4@m">
+        <i class=" fas fa-flask          fa-2x" style="color:#00BCD4" > </i>
       </div>
     </div>
   </div>
 
+    
+  
 
-    <footer>
+    
+  <div class="uk-card-body">
+    
+      <img src="./book-01-harp/img/main.png">
+    
+  </div>
 
-    </footer>
-    <script>
-      $(document).ready(function() {
-  $('img').addClass('ui image');
+    
+  
+    </a>
+  
 
-  $('.ui.embed').embed();
+    
+  
+    <div class="uk-card-footer">
+      <p> <p>Install software tools to serve a web site locally and also to deploy the web site to a public web server.</p>
+</p>
+    </div>
+  
 
-  const $images = $('.lab img');
-  jQuery.each($images, function(i) {
-    if ($images[i].alt.length > 0) {
-      const divImg = $(document.createElement('div')).addClass(
-        'ui basic segment',
-      );
-      $($images[i]).wrap(divImg);
-      const divLabel = $(document.createElement('div')).addClass(
-        'ui blue ribbon label',
-      );
-      divLabel.append($images[i].alt);
-      $(divLabel).insertBefore($images[i]);
-    }
-  });
+    
+  
 
-  $('.ui.menu .item').tab({
-    history: true,
-    historyType: 'hash',
-  });
+  </div>
 
-  $('.popup').popup();
+            
+          </div>
+        
+      
+        
+          <div>
+            
+              
+  <div class="uk-card uk-card-default 
+  
+    uk-card-hover
+  
+ uk-card-small uk-text-center uk-animation-scale-up">
+    
+  
+    
+      
+      
+    
+    <a href=./book-02-templates/index.html>
+  
 
-  $('.ui.sidebar')
-    .sidebar({ context: $('.pushable') })
-    .sidebar('setting', 'transition', 'slide out')
-    .sidebar('attach events', '#toc');
-});
+    
+  <div class="uk-card-header">
+    <div uk-grid>
+      <div class="uk-width-expand@m">
+        <h3> Lab-1.3 Templating</h3>
+      </div>
+      <div class="uk-width-1-4@m">
+        <i class=" fas fa-flask          fa-2x" style="color:#00BCD4" > </i>
+      </div>
+    </div>
+  </div>
 
-    </script>
+    
+  
+
+    
+  <div class="uk-card-body">
+    
+      <img src="./book-02-templates/img/main.png">
+    
+  </div>
+
+    
+  
+    </a>
+  
+
+    
+  
+    <div class="uk-card-footer">
+      <p> <p>Rebuild the IoT web site from the case study lab, using templating. This version of the site will aim to significantly reduce the content the author has to manage by reusing &#39;templates&#39; containing common sections.</p>
+</p>
+    </div>
+  
+
+    
+  
+
+  </div>
+
+            
+          </div>
+        
+      
+    </div>
+  </div>
+
+
   </body>
-
  </html>

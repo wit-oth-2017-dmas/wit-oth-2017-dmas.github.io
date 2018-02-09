@@ -1,30 +1,22 @@
- <!DOCTYPE html>
- <html>
-   <head>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-light.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+      
 
-     <meta charset="utf-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-     
-
-     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css" type="text/css">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" rel="stylesheet" />
-
-     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
-     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
-     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
-     <script>hljs.initHighlightingOnLoad();</script>
-
-     
-
-     <style>
-       
-
-body 
+body
 {
   font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
 }
@@ -46,18 +38,6 @@ figcaption
   padding: 1rem 0;
   overflow: visible;
 }
-
-
-
-     </style>
-
-   </head>
-
-  <body>
-    
-
-<style>
-  
 
 code
 {
@@ -109,254 +89,259 @@ body
 
 
 
-</style>
+    </style>
+  </head>
 
-<div class="ui fixed top pointing inverted stackable menu labmenu">
-  <header class="header item">
-    <i id="toc" class="sitemap icon"></i>
-    <a href="../index.html">
-      2: JavaScript Review
-    </a>
-  </header>
-  <div class="right tab-menu menu">
+  <body>
     
-    <a class="item" data-tab="Lab-2.1 JS Intro">
-      Lab-2.1 JS Intro
-    </a>
     
-    <a class="item" data-tab="01">
-      01
-    </a>
-    
-    <a class="item" data-tab="02">
-      02
-    </a>
-    
-    <a class="item" data-tab="03">
-      03
-    </a>
-    
-    <a class="item" data-tab="04">
-      04
-    </a>
-    
-    <a class="item" data-tab="05">
-      05
-    </a>
-    
-    <a class="item" data-tab="06">
-      06
-    </a>
-    
-    <a class="item" data-tab="07">
-      07
-    </a>
-    
-    <a class="item" data-tab="08">
-      08
-    </a>
-    
-    <a class="item" data-tab="Exercises">
-      Exercises
-    </a>
-    
-    <div class="item">
-      
+
+    <div class="ui fixed top pointing inverted stackable menu labmenu">
+      <header class="header item">
+        <i id="toc" class="sitemap icon"></i>
+        <a href="../index.html">
+          2: JavaScript Review 
+        </a>
+      </header>
+      <div class="right tab-menu menu">
+        
+          <a class="item" data-tab="Lab-2.1 JS Intro">
+            Lab-2.1 JS Intro
+          </a>
+        
+          <a class="item" data-tab="01">
+            01
+          </a>
+        
+          <a class="item" data-tab="02">
+            02
+          </a>
+        
+          <a class="item" data-tab="03">
+            03
+          </a>
+        
+          <a class="item" data-tab="04">
+            04
+          </a>
+        
+          <a class="item" data-tab="05">
+            05
+          </a>
+        
+          <a class="item" data-tab="06">
+            06
+          </a>
+        
+          <a class="item" data-tab="07">
+            07
+          </a>
+        
+          <a class="item" data-tab="08">
+            08
+          </a>
+        
+          <a class="item" data-tab="Exercises">
+            Exercises
+          </a>
+        
+        <div class="item">
+          
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
-<div class="ui segment pushable">
-  <div class="ui inverted labeled icon left inline vertical sidebar menu">
-    <br><br>
-    
-      
-        <a class="item" href="../../topic-01-html-and-templating/book-00-case-study/index.html">
-          Lab-1.1 Case Study
-        </a>
-      
-    
-      
-        <a class="item" href="../../topic-01-html-and-templating/book-01-harp/index.html">
-          Lab-1.2 Harp & Surge
-        </a>
-      
-    
-      
-        <a class="item" href="../../topic-01-html-and-templating/book-02-templates/index.html">
-          Lab-1.3 Templating
-        </a>
-      
-    
-      
-        <a class="item" href="../../topic-02-css-frameworks/book-a/index.html">
-          Lab-1.4 Semantic UI
-        </a>
-      
-    
-      
-        <a class="item" href="../../topic-02-css-frameworks/book-b/index.html">
-          Lab-1.5 Semantic UI
-        </a>
-      
-    
-      
-        <a class="active item" href="../../topic-02-js-review/book-1-javascript-intro/index.html">
-          Lab-2.1 JS Intro
-        </a>
-      
-    
-      
-        <a class="item" href="../../topic-02-js-review/book-2-javascript-fundamentals/index.html">
-          Lab-2.2 JS Basics
-        </a>
-      
-    
-      
-        <a class="item" href="../../topic-03-jquery+dom/book-3-jquery/index.html">
-          Lab-3 JQuery
-        </a>
-      
-    
-      
-        <a class="item" href="../../topic-04-ajax+apis/book-1-ajax-1/index.html">
-          Lab-4.1 Github API
-        </a>
-      
-    
-      
-        <a class="item" href="../../topic-04-ajax+apis/book-2-ajax-2/index.html">
-          Lab-4.2-FoureSquare API
-        </a>
-      
-    
-      
-        <a class="item" href="../../topic-05-applications/book-applications/index.html">
-          Lab-5 Applications
-        </a>
-      
-    
-      
-        <a class="item" href="../../topic-06-views/book-views/index.html">
-          Lab-6 Views
-        </a>
-      
-    
-      
-        <a class="item" href="../../topic-07-sessions/book-sessions/index.html">
-          Lab-7 Sessions
-        </a>
-      
-    
-      
-        <a class="item" href="../../topic-08-models/book-models/index.html">
-          Lab-8 Models
-        </a>
-      
-    
-      
-        <a class="item" href="../../topic-09-validation/book-validation/index.html">
-          Lab-9 Validation
-        </a>
-      
-    
-      
-        <a class="item" href="../../topic-10-deployment/book-deployment/index.html">
-          Lab-10 Deployment
-        </a>
-      
-    
-      
-        <a class="item" href="../../topic-11-seeding/book-seeding/index.html">
-          Lab-11 Seeding
-        </a>
-      
-    
-      
-        <a class="item" href="../../topic-12-api/book-api/index.html">
-          Lab-12 Apis
-        </a>
-      
-    
-      
-        <a class="item" href="../../topic-13-tdd/book-tdd/index.html">
-          Lab-13 Tdd
-        </a>
-      
-    
-      
-        <a class="item" href="../../topic-14-rest/book-rest/index.html">
-          Lab-14 Rest
-        </a>
-      
-    
-      
-        <a class="item" href="../../topic-15-aurelia-1/book-aurelia-1/index.html">
-          Lab-Aurelia 1
-        </a>
-      
-    
-      
-        <a class="item" href="../../topic-16-aurelia-2/book-aurelia-2/index.html">
-          Lab-Aurelia 2
-        </a>
-      
-    
-      
-        <a class="item" href="../../topic-17-aurelia-3/book-aurelia-3/index.html">
-          Lab-Aurelia 3
-        </a>
-      
-    
-      
-        <a class="item" href="../../topic-17-aurelia-3/book-aurelia-3-ts/index.html">
-          Aurelia Lab 3 TS
-        </a>
-      
-    
-      
-        <a class="item" href="../../topic-18-aurelia-4/book-aurelia-4/index.html">
-          Lab-Aurelia 4
-        </a>
-      
-    
-      
-        <a class="item" href="../../topic-18-aurelia-4/book-aurelia-ts-4/index.html">
-          Lab-Aurelia 4 TS
-        </a>
-      
-    
-      
-        <a class="item" href="../../topic-19-aurelia-5/book-a-hapi-auth/index.html">
-          Lab-Hapi-JWT
-        </a>
-      
-    
-      
-        <a class="item" href="../../topic-19-aurelia-5/book-b-aurelia-5/index.html">
-          Lab-Aurelia 5
-        </a>
-      
-    
-      
-        <a class="item" href="../../topic-19-aurelia-5/book-b-aurelia-5-ts/index.html">
-          Lab-Aurelia 5 TS
-        </a>
-      
-    
-  </div>
-  <div class="pusher" tabindex="-1">
-    <div class="ui basic segment" id="labchat">
-      <br>
-      
-      <div  class="ui tab segment lab" data-tab="Lab-2.1 JS Intro">
-        <h1>Objectives</h1>
+    <div class="ui segment pushable">
+      <div class="ui inverted labeled icon left inline vertical sidebar menu">
+        <br><br>
+        
+          
+            <a class="item" href="../../topic-01-html-and-templating/book-00-case-study/index.html">
+              Lab-1.1 Case Study
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic-01-html-and-templating/book-01-harp/index.html">
+              Lab-1.2 Harp & Surge
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic-01-html-and-templating/book-02-templates/index.html">
+              Lab-1.3 Templating
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic-02-css-frameworks/book-a/index.html">
+              Lab-1.4 Semantic UI
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic-02-css-frameworks/book-b/index.html">
+              Lab-1.5 Semantic UI
+            </a>
+          
+        
+          
+            <a class="active item" href="../../topic-02-js-review/book-1-javascript-intro/index.html">
+              Lab-2.1 JS Intro
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic-02-js-review/book-2-javascript-fundamentals/index.html">
+              Lab-2.2 JS Basics
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic-03-jquery+dom/book-3-jquery/index.html">
+              Lab-3 JQuery
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic-04-ajax+apis/book-1-ajax-1/index.html">
+              Lab-4.1 Github API
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic-04-ajax+apis/book-2-ajax-2/index.html">
+              Lab-4.2-FoureSquare API
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic-05-applications/book-applications/index.html">
+              Lab-5 Applications
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic-06-views/book-views/index.html">
+              Lab-6 Views
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic-07-sessions/book-sessions/index.html">
+              Lab-7 Sessions
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic-08-models/book-models/index.html">
+              Lab-8 Models
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic-09-validation/book-validation/index.html">
+              Lab-9 Validation
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic-10-deployment/book-deployment/index.html">
+              Lab-10 Deployment
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic-11-seeding/book-seeding/index.html">
+              Lab-11 Seeding
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic-12-api/book-api/index.html">
+              Lab-12 Apis
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic-13-tdd/book-tdd/index.html">
+              Lab-13 Tdd
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic-14-rest/book-rest/index.html">
+              Lab-14 Rest
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic-15-aurelia-1/book-aurelia-1/index.html">
+              Lab-Aurelia 1
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic-16-aurelia-2/book-aurelia-2/index.html">
+              Lab-Aurelia 2
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic-17-aurelia-3/book-aurelia-3/index.html">
+              Lab-Aurelia 3
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic-17-aurelia-3/book-aurelia-3-ts/index.html">
+              Aurelia Lab 3 TS
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic-18-aurelia-4/book-aurelia-4/index.html">
+              Lab-Aurelia 4
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic-18-aurelia-4/book-aurelia-ts-4/index.html">
+              Lab-Aurelia 4 TS
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic-19-aurelia-5/book-a-hapi-auth/index.html">
+              Lab-Hapi-JWT
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic-19-aurelia-5/book-b-aurelia-5/index.html">
+              Lab-Aurelia 5
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic-19-aurelia-5/book-b-aurelia-5-ts/index.html">
+              Lab-Aurelia 5 TS
+            </a>
+          
+        
+      </div>
+      <div class="pusher" tabindex="-1">
+        <div class="ui basic segment" id="labchat">
+          <br>
+          
+            <div  class="ui tab segment lab" data-tab="Lab-2.1 JS Intro">
+              <h1>Objectives</h1>
 <p>Introducing the fundamentals of the javascript language, becoming familiar with some of the different sources of a selection of javascript resources. Explore Google Chrome&#39;s javascript-based tools. Understand basic types. Acquire an understanding of the roles that arrays and objects play in a javascript program. All using JetBrains&#39; WebStorm IDE.</p>
 
-      </div>
-     
-      <div  class="ui tab segment lab" data-tab="01">
-        <h1>WebStorm IDE</h1>
+            </div>
+          
+            <div  class="ui tab segment lab" data-tab="01">
+              <h1>WebStorm IDE</h1>
 <h2>Preparation</h2>
 <p>So that we can programmatically enforce a style guide as we progressively develop our application it is necessary to install an application named <strong>jscs</strong>. Here are brief instructions to install the app in both Windows 10 and Mac OSX.</p>
 <h2>Install nodejs</h2>
@@ -412,10 +397,10 @@ body
 <img src="img/webstorm/14.png" alt="Figure 14: Reformat code automatically fixes indentation"></p>
 <p>You are now ready to commence development using WebStorm.</p>
 
-      </div>
-     
-      <div  class="ui tab segment lab" data-tab="02">
-        <h1>Getting Started</h1>
+            </div>
+          
+            <div  class="ui tab segment lab" data-tab="02">
+              <h1>Getting Started</h1>
 <h2>Anatomy of a Web Page</h2>
 <p>Before diving into JavaScript, it helps to understand how it aligns with the other web technologies.</p>
 <h3>HTML is for Content</h3>
@@ -494,10 +479,10 @@ Commonly referred to as &quot;developer tools,&quot; many browsers ship with bui
 <p><img src="img/09.png" alt="Figure 7: Chrome Developer Tools Window"></p>
 <p>In subsequent steps we will be very interested in exploring applications using the debugging feature and the ability to inspect variables and their scopes.</p>
 
-      </div>
-     
-      <div  class="ui tab segment lab" data-tab="03">
-        <h1>Running Code</h1>
+            </div>
+          
+            <div  class="ui tab segment lab" data-tab="03">
+              <h1>Running Code</h1>
 <h3>External</h3>
 <p>The first and recommended option is to write code in an external file (with a &quot;.js&quot; extension), which can then be included on our web page using an HTML <code>&lt;script&gt;</code> tag and pointing the <code>src</code> attribute to the file&#39;s location. Having JavaScript in a separate file will reduce code duplication if you want to reuse it on other pages. It will also allow the browser to cache the file on the remote client&#39;s computer, decreasing page load time.</p>
 <pre><code class="lang-html">&lt;!--Code is written in a .js file, then included via the script tag src attribute.--&gt;
@@ -594,10 +579,10 @@ console.log(title);</code></pre>
 <h3>2.3 DOM Access</h3>
 <p>Introduce some more html elements into the page. By copying the code in the example, see if you can log these elements to the console </p>
 
-      </div>
-     
-      <div  class="ui tab segment lab" data-tab="04">
-        <h1>Syntax Basics</h1>
+            </div>
+          
+            <div  class="ui tab segment lab" data-tab="04">
+              <h1>Syntax Basics</h1>
 <h3>Comments</h3>
 <p>JavaScript has support for single and multi-line comments. Comments are ignored by the JavaScript engine and therefore have no side-effects on the outcome of the program. Use comments to document the code for other developers. Libraries like <a href="http://code.google.com/p/jsdoc-toolkit/," title="JSDoc Toolkit">JSDoc</a> are available to help generate project documentation pages based on commenting conventions.</p>
 <p>Refer to <a href="http://airbnb.io/javascript/#comments">Airbnb JavaScript Style Guide rules on comments</a> for detailed information.</p>
@@ -726,10 +711,10 @@ foo();</code></pre>
 <p>In particular, notice that the variable <strong>i</strong> now has function scope.</p>
 <p><img src="img/05.png" alt="Figure 9: Variable i has function scope"></p>
 
-      </div>
-     
-      <div  class="ui tab segment lab" data-tab="05">
-        <h1>Types</h1>
+            </div>
+          
+            <div  class="ui tab segment lab" data-tab="05">
+              <h1>Types</h1>
 <p>Types in JavaScript fall into two categories: primitives or objects. Primitive types include:</p>
 <ul>
 <li>String</li>
@@ -826,10 +811,10 @@ const bar2;</code></pre>
 <p><img src="img/28.png" alt="Figure 8: Watching variables during program execution"></p>
 <p>Step through the program again and observe the variables change from undefined as values are assigned.</p>
 
-      </div>
-     
-      <div  class="ui tab segment lab" data-tab="06">
-        <h1>Objects &amp; Arrays</h1>
+            </div>
+          
+            <div  class="ui tab segment lab" data-tab="06">
+              <h1>Objects &amp; Arrays</h1>
 <p>Everything else is in JavaScript is considered an Object. While there are <a href="https://developer.mozilla.org/en/JavaScript/Reference#Global_Objects," title="MDN - Global Object Reference">numerous built-in objects</a>, here we focus on:</p>
 <ul>
 <li>Object</li>
@@ -1018,10 +1003,10 @@ Note the appearance of an array in that panel:</p>
 <p><img src="img/30.png" alt="Figure 6:"></p>
 <p>Can you see how similar they are?</p>
 
-      </div>
-     
-      <div  class="ui tab segment lab" data-tab="07">
-        <h1>Operators</h1>
+            </div>
+          
+            <div  class="ui tab segment lab" data-tab="07">
+              <h1>Operators</h1>
 <p>Basic operators allow you to manipulate values.</p>
 <pre><code class="lang-javascript">// Concatenation
 const foo = &#39;hello&#39;;
@@ -1139,10 +1124,10 @@ foo &lt;= baz;  // true</code></pre>
 <p>Create a step7.html + operators.js file in the usual manner.</p>
 <p>Incorporate the &#39;logical operators&#39; code fragment from above - and debug through them to verify the true/false values are as indicated.</p>
 
-      </div>
-     
-      <div  class="ui tab segment lab" data-tab="08">
-        <h1>Selected debug features</h1>
+            </div>
+          
+            <div  class="ui tab segment lab" data-tab="08">
+              <h1>Selected debug features</h1>
 <p>The following summarizes some of the frequently used features in the developer tools pane:</p>
 <ul>
 <li><p>Sources pane</p>
@@ -1184,35 +1169,24 @@ foo &lt;= baz;  // true</code></pre>
 </ul>
 <p><img src="img/09.png" alt="Figure 2: The Console pane"></p>
 
-      </div>
-     
-      <div  class="ui tab segment lab" data-tab="Exercises">
-        <h1>Exercises</h1>
+            </div>
+          
+            <div  class="ui tab segment lab" data-tab="Exercises">
+              <h1>Exercises</h1>
 <p>Archive of the project so far:</p>
 <ul>
 <li><a href="https://github.com/wit-ictskills-2016/js-intro.git">https://github.com/wit-ictskills-2016/js-intro.git</a></li>
 </ul>
 <p>Download and make sure you can open this project in WebStorm successfully. Verify that the Jscsrc guidelines are all showing green. Deliberately introduce some style violations, and get used to the error reports from the style plugin.</p>
 
+            </div>
+          
+        </div>
       </div>
-     
     </div>
-  </div>
-</div>
-<!--<div class="ui bottom fixed borderless right menu">
-  <div class="ui right tiny menu">
-    <div class="ui mini message segment">
-      .
-      <a href="http://creativecommons.org/licenses/by-nc/4.0/"
-         title="External link to http://creativecommons.org/licenses/by-nc/4.0/"
-         target="_blank">Creative Commons License
-      </a>
-    </div>
-  </div>
-</div>-->
 
-<script>
-  $(document).on('keydown', function(e) {
+    <script>
+      $(document).on('keydown', function(e) {
   e = e || window.event;
   var nextTab;
   switch (e.which || e.keyCode) {
@@ -1232,14 +1206,6 @@ foo &lt;= baz;  // true</code></pre>
   }
 });
 
-</script>
-
-
-
-    <footer>
-
-    </footer>
-    <script>
       $(document).ready(function() {
   $('img').addClass('ui image');
 
@@ -1275,5 +1241,4 @@ foo &lt;= baz;  // true</code></pre>
 
     </script>
   </body>
-
- </html>
+</html>
